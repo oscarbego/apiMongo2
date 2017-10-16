@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 
 // Import Models and controllers
-var models     = require('./models/tvshow')(app, mongoose);
+var models     = require('./models/tvshows')(app, mongoose);
 var TVShowCtrl = require('./controllers/tvshows');
 
 // Example Route
