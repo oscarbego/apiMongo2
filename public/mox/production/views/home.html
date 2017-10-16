@@ -1,0 +1,790 @@
+<div>
+
+              <div class="row top_tiles">
+                
+
+                
+                <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  
+                  <div class="tile-stats">
+                    
+                    <img src="images/logo.jpg" width="225" height="160" >  
+                    
+                    
+                    
+                  </div>
+                  
+
+                </div>
+              
+                <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <div class="tile-stats">
+                    <div class="icon"><i class="fa fa-comments-o"></i></div>
+                    <div class="count" style="color:#A52A2A">3</div>
+                    <h3 style="color:#A52A2A">Alertas</h3>
+                    <p>Atención Inmediata</p>
+                  </div>
+                </div>
+                <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <div class="tile-stats">
+                    <div class="icon"><i class="fa fa-sort-amount-desc"></i></div>
+                    <div class="count" style="color:#FFD700">20</div>
+                    <h3 style="color:#FFD700">Alertas</h3>
+                    <p>Por cumplir en los proximos 10 días</p>
+                  </div>
+                </div>
+                <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <div class="tile-stats">
+                    <div class="icon"><i class="fa fa-check-square-o"></i></div>
+                    <div class="count">
+                      <br>
+                      100 Unids.</div>
+                    <h3>Sin proxima atención</h3>
+                    <p>Status OK.</p>
+                  </div>
+                </div>
+              </div>
+
+
+                <div class="row">
+                  <div class="span11">
+                    <div id="map"></div>
+                  </div>
+                  <div class="span6">
+
+                    
+                  </div>
+                </div>
+
+
+                <br>
+                <div class="row">
+                <div class="col-md-4">
+                  <div class="x_panel">
+                    <div class="x_title">
+                      <h1 style="color:#A52A2A">Alertas 
+                        <!-- <small>Atención Inmediata</small>-->
+                        </h1> 
+                        <input placeholder="Buscar" ng-model="q_alerta">
+                      <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">.</a>
+                            </li>
+                            <li><a href="#">.</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                      </ul>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+
+
+                      <article class="media event" ng-repeat="veh in vehiculos | filter : q_alerta">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#A52A2A">April</p>
+                          <p class="day" style="color:#A52A2A">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#A52A2A">{{veh.placas}}</a>
+                          <p>{{veh.nombre}}, atención: 
+                            <b style="color:#A52A2A">Cambio de llantas</b>
+                            <br>
+                            <a href="">ir al detalle de mantenimiento</a> <br>
+                            <a href="">ir al Mapa</a>
+                            <hr>
+                          </p>
+                        </div>
+                      </article>
+
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#A52A2A">April</p>
+                          <p class="day" style="color:#A52A2A">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#A52A2A">568EV2</a>
+                          <p>Vehiculo de reparto, atención: 
+                            <b style="color:#A52A2A">Cambio de llantas</b>
+                            <br>
+                            <a href="">ir al Mapa</a>
+                            <hr>
+                          </p>
+                        </div>
+                      </article>
+
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#A52A2A">April</p>
+                          <p class="day" style="color:#A52A2A">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#A52A2A">568EV2</a>
+                          <p>Vehiculo de reparto, atención: 
+                            <b style="color:#A52A2A">Cambio de llantas</b>
+                            <br>
+                            <a href="">ir al Mapa</a>
+                            <hr>
+                          </p>
+                        </div>
+                      </article>
+
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#A52A2A">April</p>
+                          <p class="day" style="color:#A52A2A">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#A52A2A">568EV2</a>
+                          <p>Vehiculo de reparto, atención: 
+                            <b style="color:#A52A2A">Cambio de llantas</b>
+                            <br>
+                            <a href="">ir al Mapa</a>
+                            <hr>
+                          </p>
+                        </div>
+                      </article>
+
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#A52A2A">April</p>
+                          <p class="day" style="color:#A52A2A">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#A52A2A">568EV2</a>
+                          <p>Vehiculo de reparto, atención: 
+                            <b style="color:#A52A2A">Cambio de llantas</b>
+                            <br>
+                            <a href="">ir al Mapa</a>
+                            <hr>
+                          </p>
+                        </div>
+                      </article>
+
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#A52A2A">April</p>
+                          <p class="day" style="color:#A52A2A">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#A52A2A">568EV2</a>
+                          <p>Vehiculo de reparto, atención: 
+                            <b style="color:#A52A2A">Cambio de llantas</b>
+                            <br>
+                            <a href="">ir al Mapa</a>
+                            <hr>
+                          </p>
+                        </div>
+                      </article>
+                      <!--
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month">April</p>
+                          <p class="day">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#">Item Two Title</a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                      </article>
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month">April</p>
+                          <p class="day">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#">Item Two Title</a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                      </article>
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month">April</p>
+                          <p class="day">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#">Item Two Title</a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                      </article>
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month">April</p>
+                          <p class="day">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#">Item Three Title</a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                      </article>
+
+                      -->
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="x_panel">
+                    <div class="x_title">
+                      <h1 style="color:#DAA520">Alertas 
+                        <!-- <small>Sessions</small>-->
+                        </h1>
+                        <input placeholder="Buscar">
+                      <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Settings 1</a>
+                            </li>
+                            <li><a href="#">Settings 2</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                      </ul>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+
+
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#DAA520">April</p>
+                          <p class="day" style="color:#DAA520">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#DAA520">568EV3</a>
+                          <p>Troca de reparto Foraneo, <br>
+                            <b style="color:#DAA520">
+                              Servio de Motor
+                            </b>
+                            <br>
+                            <a href="">ir al mapa</a>
+                            <hr>
+                            </p>
+                        </div>
+                      </article>
+
+
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#DAA520">April</p>
+                          <p class="day" style="color:#DAA520">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#DAA520">568EV3</a>
+                          <p>Troca de reparto Foraneo, <br>
+                            <b style="color:#DAA520">
+                              Servio de Motor
+                            </b>
+                            <br>
+                            <a href="">ir al mapa</a>
+                            <hr>
+                            </p>
+                        </div>
+                      </article>
+
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#DAA520">April</p>
+                          <p class="day" style="color:#DAA520">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#DAA520">568EV3</a>
+                          <p>Troca de reparto Foraneo, <br>
+                            <b style="color:#DAA520">
+                              Servio de Motor
+                            </b>
+                            <br>
+                            <a href="">ir al mapa</a>
+                            <hr>
+                            </p>
+                        </div>
+                      </article>
+
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#DAA520">April</p>
+                          <p class="day" style="color:#DAA520">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#DAA520">568EV3</a>
+                          <p>Troca de reparto Foraneo, <br>
+                            <b style="color:#DAA520">
+                              Servio de Motor
+                            </b>
+                            <br>
+                            <a href="">ir al mapa</a>
+                            <hr>
+                            </p>
+                        </div>
+                      </article>
+
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#DAA520">April</p>
+                          <p class="day" style="color:#DAA520">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#DAA520">568EV3</a>
+                          <p>Troca de reparto Foraneo, <br>
+                            <b style="color:#DAA520">
+                              Servio de Motor
+                            </b>
+                            <br>
+                            <a href="">ir al mapa</a>
+                            <hr>
+                            </p>
+                        </div>
+                      </article>
+
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#DAA520">April</p>
+                          <p class="day" style="color:#DAA520">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#DAA520">568EV3</a>
+                          <p>Troca de reparto Foraneo, <br>
+                            <b style="color:#DAA520">
+                              Servio de Motor
+                            </b>
+                            <br>
+                            <a href="">ir al mapa</a>
+                            <hr>
+                            </p>
+                        </div>
+                      </article>
+
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#DAA520">April</p>
+                          <p class="day" style="color:#DAA520">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#DAA520">568EV3</a>
+                          <p>Troca de reparto Foraneo, <br>
+                            <b style="color:#DAA520">
+                              Servio de Motor
+                            </b>
+                            <br>
+                            <a href="">ir al mapa</a>
+                            <hr>
+                            </p>
+                        </div>
+                      </article>
+
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#DAA520">April</p>
+                          <p class="day" style="color:#DAA520">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#DAA520">568EV3</a>
+                          <p>Troca de reparto Foraneo, <br>
+                            <b style="color:#DAA520">
+                              Servio de Motor
+                            </b>
+                            <br>
+                            <a href="">ir al mapa</a>
+                            <hr>
+                            </p>
+                        </div>
+                      </article>
+
+                      <!--
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month">April</p>
+                          <p class="day">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#">Item Two Title</a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                      </article>
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month">April</p>
+                          <p class="day">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#">Item Two Title</a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                      </article>
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month">April</p>
+                          <p class="day">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#">Item Two Title</a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                      </article>
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month">April</p>
+                          <p class="day">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#">Item Three Title</a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                      </article>
+                    -->
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="x_panel">
+                    <div class="x_title">
+                      <h1>Status OK 
+                        <!-- <small>jahsd</small>-->
+                      </h1>
+                      <input placeholder="Buscar">
+                      <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Settings 1</a>
+                            </li>
+                            <li><a href="#">Settings 2</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                      </ul>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+
+
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#4682B4">April</p>
+                          <p class="day" style="color:#4682B4">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#4682B4" >568EV1</a>
+                          <p>Vehiculo de Reparto, <br>
+                            <b style="color:#4682B4">
+                              atención requerida - Llantas -
+                            </b>
+                            </p>
+                          
+                            <a href="">ir al mapa</a>
+                            <hr>
+                        </div>
+                      </article>
+
+
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#4682B4">April</p>
+                          <p class="day" style="color:#4682B4">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#4682B4" >568EV1</a>
+                          <p>Vehiculo de Reparto, <br>
+                            <b style="color:#4682B4">
+                              atención requerida - Llantas -
+                            </b>
+                            </p>
+                          
+                            <a href="">ir al mapa</a>
+                            <hr>
+                        </div>
+                      </article>
+
+
+                <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#4682B4">April</p>
+                          <p class="day" style="color:#4682B4">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#4682B4" >568EV1</a>
+                          <p>Vehiculo de Reparto, <br>
+                            <b style="color:#4682B4">
+                              atención requerida - Llantas -
+                            </b>
+                            </p>
+                          
+                            <a href="">ir al mapa</a>
+                            <hr>
+                        </div>
+                      </article>
+
+
+                <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#4682B4">April</p>
+                          <p class="day" style="color:#4682B4">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#4682B4" >568EV1</a>
+                          <p>Vehiculo de Reparto, <br>
+                            <b style="color:#4682B4">
+                              atención requerida - Llantas -
+                            </b>
+                            </p>
+                          
+                            <a href="">ir al mapa</a>
+                            <hr>
+                        </div>
+                      </article>
+
+
+                <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#4682B4">April</p>
+                          <p class="day" style="color:#4682B4">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#4682B4" >568EV1</a>
+                          <p>Vehiculo de Reparto, <br>
+                            <b style="color:#4682B4">
+                              atención requerida - Llantas -
+                            </b>
+                            </p>
+                          
+                            <a href="">ir al mapa</a>
+                            <hr>
+                        </div>
+                      </article>
+
+
+                <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#4682B4">April</p>
+                          <p class="day" style="color:#4682B4">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#4682B4" >568EV1</a>
+                          <p>Vehiculo de Reparto, <br>
+                            <b style="color:#4682B4">
+                              atención requerida - Llantas -
+                            </b>
+                            </p>
+                          
+                            <a href="">ir al mapa</a>
+                            <hr>
+                        </div>
+                      </article>
+
+
+                <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#4682B4">April</p>
+                          <p class="day" style="color:#4682B4">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#4682B4" >568EV1</a>
+                          <p>Vehiculo de Reparto, <br>
+                            <b style="color:#4682B4">
+                              atención requerida - Llantas -
+                            </b>
+                            </p>
+                          
+                            <a href="">ir al mapa</a>
+                            <hr>
+                        </div>
+                      </article>
+
+
+                <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#4682B4">April</p>
+                          <p class="day" style="color:#4682B4">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#4682B4" >568EV1</a>
+                          <p>Vehiculo de Reparto, <br>
+                            <b style="color:#4682B4">
+                              atención requerida - Llantas -
+                            </b>
+                            </p>
+                          
+                            <a href="">ir al mapa</a>
+                            <hr>
+                        </div>
+                      </article>
+
+
+                <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#4682B4">April</p>
+                          <p class="day" style="color:#4682B4">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#4682B4" >568EV1</a>
+                          <p>Vehiculo de Reparto, <br>
+                            <b style="color:#4682B4">
+                              atención requerida - Llantas -
+                            </b>
+                            </p>
+                          
+                            <a href="">ir al mapa</a>
+                            <hr>
+                        </div>
+                      </article>
+
+
+                <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#4682B4">April</p>
+                          <p class="day" style="color:#4682B4">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#4682B4" >568EV1</a>
+                          <p>Vehiculo de Reparto, <br>
+                            <b style="color:#4682B4">
+                              atención requerida - Llantas -
+                            </b>
+                            </p>
+                          
+                            <a href="">ir al mapa</a>
+                            <hr>
+                        </div>
+                      </article>
+
+
+                <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#4682B4">April</p>
+                          <p class="day" style="color:#4682B4">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#4682B4" >568EV1</a>
+                          <p>Vehiculo de Reparto, <br>
+                            <b style="color:#4682B4">
+                              atención requerida - Llantas -
+                            </b>
+                            </p>
+                          
+                            <a href="">ir al mapa</a>
+                            <hr>
+                        </div>
+                      </article>
+
+
+                <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#4682B4">April</p>
+                          <p class="day" style="color:#4682B4">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#4682B4" >568EV1</a>
+                          <p>Vehiculo de Reparto, <br>
+                            <b style="color:#4682B4">
+                              atención requerida - Llantas -
+                            </b>
+                            </p>
+                          
+                            <a href="">ir al mapa</a>
+                            <hr>
+                        </div>
+                      </article>
+
+
+                <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#4682B4">April</p>
+                          <p class="day" style="color:#4682B4">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#4682B4" >568EV1</a>
+                          <p>Vehiculo de Reparto, <br>
+                            <b style="color:#4682B4">
+                              atención requerida - Llantas -
+                            </b>
+                            </p>
+                          
+                            <a href="">ir al mapa</a>
+                            <hr>
+                        </div>
+                      </article>
+
+
+                <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month" style="color:#4682B4">April</p>
+                          <p class="day" style="color:#4682B4">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#" style="color:#4682B4" >568EV1</a>
+                          <p>Vehiculo de Reparto, <br>
+                            <b style="color:#4682B4">
+                              atención requerida - Llantas -
+                            </b>
+                            </p>
+                          
+                            <a href="">ir al mapa</a>
+                            <hr>
+                        </div>
+                      </article>
+
+
+
+                      <!--
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month">April</p>
+                          <p class="day">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#">Item Two Title</a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                      </article>
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month">April</p>
+                          <p class="day">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#">Item Two Title</a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                      </article>
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month">April</p>
+                          <p class="day">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#">Item Two Title</a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                      </article>
+                      <article class="media event">
+                        <a class="pull-left date">
+                          <p class="month">April</p>
+                          <p class="day">23</p>
+                        </a>
+                        <div class="media-body">
+                          <a class="title" href="#">Item Three Title</a>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                      </article>
+                    -->
+                    </div>
+                  </div>
+                </div>
+                </div>
+            </div>

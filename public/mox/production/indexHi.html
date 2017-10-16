@@ -1,0 +1,123 @@
+<html>
+
+<head>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js">
+    </script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    
+    <script type="text/javascript" src="moxjs/functions.js"></script>
+
+    <!-- <script src="moxjs/ini.js"></script> -->
+
+    <script src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css" />
+
+
+	</head> 
+	
+
+
+
+  <!-- <body onload="initialize2()"> -->
+ <body>
+
+    <div id="map">
+    </div>
+  	<!-- <button id="btn"> add </button> -->
+  </body>
+</html>
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+
+	var ruta_P = [];
+
+	$("#btn").click(function(){
+		
+		console.log("entro");		
+	
+		var ruta = [new google.maps.LatLng(28.6938333, -106.0911733), 
+					new google.maps.LatLng(28.6738333, -106.0711733)];
+        	var linea_P = new google.maps.Polyline(
+                	{       
+				path: ruta,
+                        	map: map,
+                        	strokeColor: '#131540',
+                        	strokeWeight: 6,
+                       	 	strokeOpacity: 0.6,
+                        	clickable: true
+                	}
+        	);
+	
+	});
+	
+    var socket = io.connect( { 'forceNew': true } );
+
+    var eventos = [];
+
+    socket.on('msg', function (data) {
+
+	console.log("msg");	
+	console.log(data)
+	
+		var newRute = [ 	ruta_P[ruta_P.length-1],
+                                        getGpsLatLng(data)
+			      ];
+
+                var linea_P = new google.maps.Polyline(
+                        {
+                                path: newRute,
+                                map: map,
+                                strokeColor: '#131540',
+                                strokeWeight: 6,
+                                strokeOpacity: 0.6,
+                                clickable: true
+                        }
+                );
+
+    });
+
+    socket.on('msgs', function (data) {
+
+        console.log("msgs");
+	console.log(data);
+        console.log("numero de eventos: " + data.length);
+        //eventos = data;
+
+    if(data.length > 0)	{
+
+	ruta_P= addRoutesMox(data);
+	var	ev = getMyEventGPS(data[0]);
+
+	//RUTA
+        RP = new google.maps.Marker(
+    	{
+      		position: new google.maps.LatLng(ev.la, ev.lo),
+      		//icon: 'images/R1.png',
+      		map: map, title: 'Ruta Procesa!'
+    	});
+
+	
+	//ruta_P.push(new google.maps.LatLng(28.240018, -105.446759));
+        
+	var linea_P = new google.maps.Polyline(
+                {       path: ruta_P,
+                        map: map,
+                        strokeColor: '#131540',
+                        strokeWeight: 6,
+                        strokeOpacity: 0.6,
+                        clickable: true
+
+                });
+	    }
+ 	});
+    
+ }); 
+
+</script>
+

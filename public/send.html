@@ -1,0 +1,106 @@
+<html>
+<head>
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js">
+	</script>
+	
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+
+	<h2>Send</h2>
+	<hr>
+	la :  <input id="la" value=  "28.6002233"> <br>
+	lo :  <input id="lo" value="-106.1091483"> <br>
+	<button id="btn">send eventGPS</button>
+</body>
+</html>
+
+
+<script type="text/javascript">
+
+    var map;
+    
+	$(document).ready(function(){
+
+		var socket = io.connect( { 'forceNew': true } );
+
+		
+		var la = $( "#la" );		
+		var lo = $( "#lo" );
+
+		$( "#btn" ).click( () => {
+          
+          	console.log('send');
+      
+			var evento = {
+							"alarm": false,
+							"controllerId":"862462035861144",
+							"data":[
+								{
+									"name":"posinfo", 
+									"value":{
+										"course":148,
+										"height":1472,
+										"lat":la.val(),
+										"lon":lo.val(),
+										"numSat":18,
+										"speed":0
+									}
+								},
+								{
+									"name":"hdop", 
+									"value":0.6
+								},
+								{
+									"name":"io_caused", 
+									"value":117440512
+								},
+								{
+									"name":"io_1_176", 
+									"value":0
+								},
+								{
+									"name":"gsm_signal", 
+									"value":285212672
+								},
+								{
+									"name":"battery", 
+									"value":-1206976512
+								},
+								{
+									"name":"odometer", 
+									"value":-1865778873359138800
+								},
+								{
+									"name":"io_4_77", 
+									"value":0
+								},
+								{
+									"name":"avl_inputs", 
+									"value":0
+								}
+								   ],
+							"igInputInfo":true,
+							"digOutInfo":false,
+							"driversIdInfo":false,
+							"posInfo":true,
+							"time":"2017-09-26T05:32:17.000Z"
+						 };
+
+      		socket.emit("new-msg", evento);
+        	
+
+        });
+
+		
+
+		
+		
+		
+		
+		
+
+ });
+</script>
+

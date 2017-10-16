@@ -1,0 +1,83 @@
+<html>
+<head>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js">
+	</script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyB0sfU6PG2Aee-SyyiKpgSIbV3UYJdLIto&sensor=true">
+	</script>
+  
+  	<script src="/socket.io/socket.io.js"></script>
+
+	<script type="text/javascript" src="gmaps.js"></script>
+
+	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+
+</head>
+<body>
+	<h2>Test Basic Map</h2>
+	<hr>
+	<div id="map"></div>
+</body>
+</html>
+
+<script src="app.js"></script>
+
+
+<script type="text/javascript">
+
+    var map;
+
+	$(document).ready(function(){
+
+		var socket = io.connect( { 'forceNew': true } );
+
+		var eventos = [];
+
+		map = new GMaps(
+			{
+				el: '#map',
+		        lat: 28.6088233,
+		        lng: -106.0341483,
+		        zoomControl : true,
+		        zoomControlOpt: {
+	            	style : 'SMALL',
+	            	position: 'TOP_LEFT'
+	        	},
+	        	panControl : false,
+	        	streetViewControl : false,
+	        	mapTypeControl: false,
+	        	overviewMapControl: false
+	      	}
+    	);
+
+
+		
+		socket.on('msgs', function (data) {
+
+			console.log("msgs");
+			//console.log(data);
+			eventos = data;
+			addRoutes(eventos, map);
+		}
+		);
+
+
+		socket.on('msg', function (data) {
+			console.log("msg");
+			
+			if(!compareEventGPS(eventos[eventos.length - 1], data)){
+
+				route( eventos[eventos.length - 1], data, map);
+				eventos.push(data);
+				var f = getMyEventGPS( data );
+				map.setCenter(f.la, f.lo);
+			}
+		});
+
+ });
+</script>
+
+
+
+

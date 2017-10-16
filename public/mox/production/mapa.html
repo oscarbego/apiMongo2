@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+<!--
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+-->
+
+<script src="/socket.io/socket.io.js"></script>
+
+  <script src="../vendors/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+  
+  <script type="text/javascript" src="gmaps.js"></script>
+
+  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="examples.css" />
+
+  <script type="text/javascript">
+    var map;
+    $(document).ready(function(){
+
+      var socket = io.connect( { 'forceNew': true } );
+	
+	socket.on('msg', (data) => {
+		console.log("GPS posi from socket");
+
+		console.log(data);
+		//console.log(data.controllerId);
+		//console.log(data.data);
+		
+		var la;
+		var lo;
+
+		//if(data.controllerId == 868324024026572){
+		if(data.controllerId == 862462035861144){
+		  for (var i = 0; i < data.data.length; i++) {
+      		    if (data.data[i].name == "posinfo"){
+        		console.log(data.data[i]);
+			console.log(data.data[i].value.lat);
+			la = data.data[i].value.lat;
+			lo = data.data[i].value.lon;
+			console.log(data.data[i].value.lon);
+                    }
+      
+    		  }
+			//var obj = JSON.parse(data);
+			//$( "p" ).append( data + "<br>");
+		  var latlng = {'lat': la, 'lng': lo, 'title': "Algo2!"}
+
+		  console.log(latlng);
+          	  map.setZoom(14);
+          	  //map.setCenter(latlng.lat, latlng.lng);
+          	  map.addMarker(latlng);
+
+	}
+
+/*
+	var latlng = {
+            'lat': 28.676748,
+            'lng': -106.093621,
+            'title': "Algo socket!",
+          }
+*/
+
+
+	});
+	
+      map = new GMaps({
+        el: '#map',
+        'lat': 28.676748,
+            'lng': -106.093621,
+        zoomControl : true,
+        zoomControlOpt: {
+            style : 'SMALL',
+            position: 'TOP_LEFT'
+        },
+        panControl : false,
+        streetViewControl : false,
+        mapTypeControl: false,
+        overviewMapControl: false
+      });
+
+      $( "#btnAdd" ).click(function() {
+          console.log('Add');
+      
+          var latlng = {
+            'lat': -12.043343,
+            'lng': -77.027343,
+            'title': "Algo!",
+          }
+
+          map.setZoom(16);
+          //map.setCenter(latlng.lat, latlng.lng);
+          map.addMarker(latlng);
+
+        });
+
+      $( "#btnAdd1" ).click(function() {
+          console.log('Add');
+      
+          var latlng = {
+            'lat': -12.043353,
+            'lng': -77.028353,
+            'title': "Algo!",
+          }
+
+          map.setZoom(16);
+          //map.setCenter(latlng.lat, latlng.lng);
+          map.addMarker(latlng);
+
+        });
+
+      $( "#btnAdd2" ).click(function() {
+          console.log('Add');
+      
+          var latlng = {
+            'lat': -12.043363,
+            'lng': -77.029363,
+            'title': "Algo!",
+          }
+		
+	console.log(latlng);
+          map.setZoom(16);
+          //map.setCenter(latlng.lat, latlng.lng);
+          map.addMarker(latlng);
+
+        });
+
+    });
+  </script>
+</head>
+<body>
+  <!-- <h1>GMaps.js &mdash; Basic</h1>-->
+  <div class="row">
+    <div class="span11">
+      <div id="map"></div>
+    </div>
+    <div class="span6">
+
+      <!--
+      <p>Using GMaps.js is as easy as:</p>
+      <pre>new GMaps({
+  el: '#map',
+  lat: -12.043333,
+  lng: -77.028333
+});</pre>
+      <p>You must define <strong>container ID</strong>, <strong>latitude</strong> and <strong>longitude</strong> of the map's center.</p>
+      <p><span class="label notice">Note: </span>You also can define <strong>zoom</strong>, <strong>width</strong> and <strong>height</strong>. By default, zoom is 15. Width and height in a CSS class will replace these values.</p>
+
+     -->
+    </div>
+  </div>
+<!--
+  <button id="btnAdd"> add</button>
+  <button id="btnAdd1"> add</button>
+  <button id="btnAdd2"> add</button>
+-->
+</body>
+</html>
+

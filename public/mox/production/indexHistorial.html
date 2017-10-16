@@ -1,0 +1,52 @@
+<html>
+
+<head>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js">
+    </script>
+
+    <script src="/socket.io/socket.io.js"></script>
+    
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    
+    <script type="text/javascript" src="moxjs/functions.js"></script>
+
+    <script src="moxjs/ini.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/estilo.css" />
+
+
+	</head> 
+	
+
+
+
+  <body onload="initialize()">
+
+    <div id="map">
+    </div>
+  
+  </body>
+</html>
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+
+    var socket = io.connect( { 'forceNew': true } );
+
+    var eventos = [];
+
+    socket.on('msgs', function (data) {
+
+        console.log("msgs");
+        console.log(data);
+        eventos = data;
+      }
+    );
+
+ });
+
+
+</script>
+
