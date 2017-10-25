@@ -24,19 +24,20 @@ var CarsKmsCtrl        = require('./controllers/carsKms');
 
 // Example Route
 var router = express.Router();
+
 router.get('/', function(req, res) {
   res.send("Hello world!");
 });
 app.use(router);
 
 // API routes
-var tvshows = express.Router();
+var kms = express.Router();
 
-tvshows.route('/kms')
+kms.route('/kms')
   .get(CarsKmsCtrl.getAllKmsEntrys)
   .post(CarsKmsCtrl.addKmsEntry);
 
-tvshows.route('/kms/:id')
+kms.route('/kms/:id')
   .get(CarsKmsCtrl.findById)
   .put(CarsKmsCtrl.updateKmsEntry)
   .delete(CarsKmsCtrl.deleteKmsEntry);
