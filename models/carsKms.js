@@ -4,7 +4,8 @@ exports = module.exports = function(app, mongoose) {
 		imei: 		{ type: Number },
         iniKms:		{ type: Number },
         finKms:		{ type: Number },
-        fecha:      {type: Date}
+        fecha:      {type: Date},
+		kmsRecorridos: { type: Number }
         
 	});
 

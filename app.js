@@ -18,7 +18,9 @@ app.use(methodOverride());
 // Import Models and controllers
 var models            = require('./models/tvshows')(app, mongoose);
 var modelsCarsKms     = require('./models/carsKms')(app, mongoose);
+
 var TVShowCtrl        = require('./controllers/tvshows');
+var CarsKmsCtrl        = require('./controllers/carsKms');
 
 // Example Route
 var router = express.Router();
@@ -30,16 +32,16 @@ app.use(router);
 // API routes
 var tvshows = express.Router();
 
-tvshows.route('/tvshows')
-  .get(TVShowCtrl.findAllTVShows)
-  .post(TVShowCtrl.addTVShow);
+tvshows.route('/kms')
+  .get(CarsKmsCtrl.getAllKmsEntrys)
+  .post(CarsKmsCtrl.addKmsEntry);
 
-tvshows.route('/tvshows/:id')
-  .get(TVShowCtrl.findById)
-  .put(TVShowCtrl.updateTVShow)
-  .delete(TVShowCtrl.deleteTVShow);
+tvshows.route('/kms/:id')
+  .get(CarsKmsCtrl.findById)
+  .put(CarsKmsCtrl.updateKmsEntry)
+  .delete(CarsKmsCtrl.deleteKmsEntry);
 
-app.use('/api', tvshows);
+app.use('/api', kms);
 
 // Start server
 app.listen(3000, function() {
