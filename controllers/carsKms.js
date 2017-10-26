@@ -61,8 +61,21 @@ exports.updateKmsEntry = function(req, res) {
 };
 
 //DELETE - Delete a TVShow with specified ID deleteKmsEntry
+/* DELETE /todos/:id  
+router.delete('/:id', function(req, res, next) {
+  Todo.findByIdAndRemove(req.params.id, req.body, function (err, post) {
+    if (err) return next(err);
+    res.json(post);
+  });
+});
+*/
 exports.deleteKmsEntry = function(req, res) {
-	CarsKms.findById(req.params.id, function(err, kmsEntry) {
+	
+	CarsKms.findByIdAndRemove(req.params.id, req.body, function (err, kmsEntry) {
+    	if (err) return next(err);
+    		res.json(kmsEntry);
+  	});
+	/*CarsKms.findById(req.params.id, function(err, kmsEntry) {
 		console.log(kmsEntry);
 		kmsEntry.remove(function(err) {
 			console.log("in delete");
@@ -70,4 +83,6 @@ exports.deleteKmsEntry = function(req, res) {
       		res.status(200);
 		})
 	});
+	*/
 };
+
