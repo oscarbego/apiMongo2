@@ -25,8 +25,8 @@ function sumarDias(fecha, dias){
 }
 
 
-var mongoose = require('mongoose');
-var CarsKms  = mongoose.model('CarsKms');
+
+var CarsKms2  = mongoose.model('CarsKms');
 
 // app procesa ----------------------------
 
@@ -49,7 +49,7 @@ var j = schedule.scheduleJob(rule, function () {
     se recupera el primer evento desde la variable
     se recupera el ultimo evento desde el arreglo de eventos
   */
-  var kmsEntry = new CarsKms({
+  var kmsEntry = new CarsKms2({
 		imei:    862462035861144,
 		iniKms:  0,
 		finKms:  0,
