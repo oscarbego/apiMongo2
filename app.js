@@ -36,14 +36,13 @@ var primerEventoDia;
 
 var rule = new schedule.RecurrenceRule();
   rule.dayOfWeek = [0, new schedule.Range(0, 6)];
-  rule.hour = 9;
+  rule.hour = 9; //rule.hour = 9;
   rule.minute = 0;
 
 var j = schedule.scheduleJob(rule, function () {
   console.log('Alarma ');
 
-  
-    
+
   //save in mongodb
   /*
     se recupera el primer evento desde la variable
@@ -51,10 +50,10 @@ var j = schedule.scheduleJob(rule, function () {
   */
   var kmsEntry = new CarsKms({
 		imei:    862462035861144,
-		iniKms:  0,
-		finKms:  0,
+		iniKms:  primerEventoDia.data[11].value,
+		finKms:  eventos[eventos.length - 1].data[11].value,
 		fecha:   new Date(),
-		kmsRecorridos:  0
+		kmsRecorridos:  primerEventoDia.data[11].value - eventos[eventos.length - 1].data[11].value
 	});
 
 
@@ -91,6 +90,7 @@ retranslator.emitter.on('message', (msg) =>
     eventos.push(msg);
     io.sockets.emit('msg', msg);
     console.log(msg);
+    console.log(msg.data[11].value);
     //io.sockets.emit('msg', eventos);
     //writable.write(JSON.stringify(msg, null, 2), { encoding: 'utf8' });
   }
