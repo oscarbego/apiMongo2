@@ -77,7 +77,7 @@ retranslator.emitter.on('message', (msg) =>
 
     //console.log(JSON.stringify(msg, null, 2), { encoding: 'utf8' });
     
-    console.log(msg);
+    
     //863835024736063, 862462035861144
     if(msg.controllerId == 862462035861144){	
     
@@ -90,7 +90,7 @@ retranslator.emitter.on('message', (msg) =>
 
     eventos.push(msg);
     io.sockets.emit('msg', msg);
-    //console.log(msg);
+    console.log(msg);
     console.log(msg.data[11].value);
     //io.sockets.emit('msg', eventos);
     //writable.write(JSON.stringify(msg, null, 2), { encoding: 'utf8' });
