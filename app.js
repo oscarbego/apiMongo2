@@ -49,7 +49,7 @@ var j = schedule.scheduleJob(rule, function () {
     se recupera el primer evento desde la variable
     se recupera el ultimo evento desde el arreglo de eventos
   */
-  var kmsEntry = new CarsKms2({
+  var kmsEntry = new CarsKms({
 		imei:    862462035861144,
 		iniKms:  0,
 		finKms:  0,
