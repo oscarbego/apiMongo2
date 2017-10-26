@@ -1,0 +1,21 @@
+<h2>Alta de Shows para Tv</h2>
+
+<hr>
+
+Titulo : <input ng-model="tvShow.title"> <br>
+Año : <input ng-model="tvShow.year" type="number"> <br>
+Pais : <input ng-model="tvShow.country"> <br>
+Poster : <input ng-model="tvShow.poster"> <br>
+Temporada : <input ng-model="tvShow.seasons" type="number"> <br>
+Genero : 
+
+<select ng-model="tvShow.genre" ng-options="item for item in generos"></select>
+
+<br>
+
+
+Descripcion : <input ng-model="tvShow.summary"> <br>
+
+<hr>
+<button ng-click="add(tvShow)">Add</button>
+<hr>

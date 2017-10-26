@@ -12,7 +12,9 @@ var fs = require('fs');
 var writable = fs.createWriteStream('file-buff.json');
 
 
-app.use(express.static('public'));
+
+
+app.use(express.static(__dirname + '/public'));
 
 function sumarDias(fecha, dias){
   fecha.setDate(fecha.getDate() + dias);
