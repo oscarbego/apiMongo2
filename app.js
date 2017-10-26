@@ -26,7 +26,7 @@ function sumarDias(fecha, dias){
 
 
 
-var CarsKms2  = mongoose.model('CarsKms');
+//var CarsKms2  = mongoose.model('CarsKms');
 
 // app procesa ----------------------------
 
