@@ -1,0 +1,873 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en" ng-app="empresa">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Procesa! | </title>
+
+	<link href="css/datepicker.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+
+
+<!--
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+
+-->
+
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyB0sfU6PG2Aee-SyyiKpgSIbV3UYJdLIto&sensor=true"></script>
+
+  <!-- <script type="text/javascript" src="concurrent.js"></script> -->
+  <script type="text/javascript" src="app.js"></script>  
+  <script type="text/javascript" src="gmaps.js"></script>
+
+  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="examples.css" />
+  
+
+	<!--  <script type="text/javascript" src="moxjs/functions.js"></script> -->
+	
+	
+  </head>
+
+  <body class="nav-md" ng-controller="index">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <!-- <img src="images/logo.jpg" width="200" height="120" > -->
+              <a href="index.html" class="site_title">
+                
+                <!-- <i class="fa fa-paw"></i> -->
+                
+                <span>Procesa!</span>
+              </a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Bienvenido,</span>
+                <h1>Noel</h1>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>General</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <!--
+                      <li><a href="index.html">.</a></li>
+                      <li><a href="index2.html">.</a></li>
+                      <li><a href="index3.html">.</a></li>
+                      -->
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-edit"></i> Lista de Vehiculos <span class="fa fa-chevron-down"></span></a>
+                    
+                  </li>
+                  <li><a><i class="fa fa-desktop"></i> Atención Inmediata <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                     
+                     
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> Por cumplir <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      
+                      
+                    </ul>
+                  </li>
+                 
+                
+                </ul>
+              </div>
+              <div class="menu_section">
+                <h3>Live On</h3>
+                <ul class="nav side-menu">
+                  
+              </div>
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="images/img.jpg" alt="">Noel
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="javascript:;"> Profile</a></li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                    <li><a href="javascript:;">Help</a></li>
+                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  </ul>
+                </li>
+
+                <li role="presentation" class="dropdown">
+                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="badge bg-green">6</span>
+                  </a>
+                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="text-center">
+                        <a>
+                          <strong>See All Alerts</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+
+        <div class="right_col" role="main">
+
+
+          <div class="">
+
+            <div class="row top_tiles">
+              
+
+              
+              <div class="animated flipInY col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                
+                <div class="tile-stats text-center">
+                  
+                  <img src="images/logo.jpg" width="120" height="70" >  
+                  
+                  
+                  
+                </div>
+                
+
+              </div>
+            
+
+
+              <div class="row">
+                <div class="span11">
+                  <div id="map"></div>
+                </div>
+                <div class="span6">
+                </div>
+              </div>
+
+		
+<br>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="well">
+					<h2>CHOFER: Ivan Octavio Mesta Gonzalez</h2>
+                                        <hr>
+					<h2>KILOMETRAJE (GPS) INICIAL:
+                                        <span id="iniKm">KMs: 0.0 </span></h2>
+					<hr> 
+					<h2>KILOMETRAJE (GPS) ACTUAL:
+					<hspan id="actualKm">KMs: 0.0 </span></h2>
+					<hr>
+					
+					<h2>KILOMETRAJE RECORRIDO:
+                                        <hspan id="totalKm"></span></h2>
+					
+				</div>
+			</div>
+		</div>
+	
+<div class="row">
+	<div class="col-lg-12 text-center">
+		<button class="btn btn-primery" data-toggle="collapse" data-target="#demo">
+			Datos del Vehiculo
+		</button> 
+	</div>
+</div>
+
+<div class="row collapse" id="demo">
+			<div class="col-lg-4">
+				<div class="rating-block">
+					<!-- <h4>Incis</h4> -->
+					<h1 class="bold padding-bottom-7">Panadería</h1>
+					
+					<img src="http://www.renaultcuautitlan.com.mx/assets/d485/img/kangoo.png" class="img-rounded">
+				</div>
+			</div>
+			<div class="col-lg-8">
+				<h4>Datos</h4>
+				<hr>
+				<h4><small>Sitio:&nbsp;</small>PANADERIA</h4>
+				<h4><small>Marca:&nbsp;</small>RENAULT</h4>
+				<h4><small>Modelo:&nbsp;</small>KANGOO EXPRESS CARGA</h4>
+				<h4><small>Tipo:&nbsp;</small>Carga</h4>
+				<h4><small>Placas:&nbsp;</small>EE37702</h4>
+				<h4><small>Año:&nbsp;</small>2008</h4>
+				<h4><small>Serie:&nbsp;</small>8A1FCJ518L023460</h4>
+				<h4><small>Covertura:&nbsp;</small>AMPLIA</h4>
+				
+			</div>			
+		</div>			
+		
+
+<div class="well">
+            <table class="table">
+				<thead>
+					<tr>
+						<th><h3>Fecha Inicio</h3><a href="#" class="btn btn-primary" id="dp4" data-date-format="yyyy-mm-dd" data-date="">Change</a></th>
+						<th><h3>Fecha Fin</h3><a href="#" class="btn btn-primary" id="dp5" data-date-format="yyyy-mm-dd" data-date="">Change</a></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td id="startDate"></td>
+						<td id="endDate"></td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<div class="row" id="tableKms">
+                                <div class="col-lg-3">
+                                        <h4>Fecha: 20 Oct 2017</h4>
+                                </div>
+                                <div class="col-lg-3">
+                                        <h4>Km Inicial: 151932</h4>
+                                </div>
+                                <div class="col-lg-3">
+                                        <h4>Km Final: 151992</h4>
+                                </div>
+                                <div class="col-lg-3">
+                                        <h4>Km Recorridos: 60</h4>
+                                </div>
+                        </div>
+
+			<div class="row">
+				<div class="col-lg-3">
+					<h4>Fecha: 19 Oct 2017</h4>
+				</div>
+				<div class="col-lg-3">
+					<h4>Km Inicial: 151729</h4>
+				</div>
+				<div class="col-lg-3">
+					<h4>Km Final: 151761</h4>
+				</div>
+				<div class="col-lg-3">
+					<h4>Km Recorridos: 203</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3">
+					<h4>Fecha: 18 Oct 2017</h4>
+				</div>
+				<div class="col-lg-3">
+					<h4>Km Inicial: 151700</h4>
+				</div>
+				<div class="col-lg-3">
+					<h4>Km Final: 151761</h4>
+				</div>
+				<div class="col-lg-3">
+					<h4>Km Recorridos: 32</h4>
+				</div>
+			</div>
+        </div>
+
+
+	     <div class="row">
+                  <div class="span11">
+                    <div id="detalleVeh">
+			<hr>
+                        <!-- INICIO<p id="iniKm">KMs: 0.0 </p>-->  <!-- <p id="iniDir">Direccion: </p>-->
+			<hr>
+                        <!-- <p id="actualDir">Direccion: </p>-->
+			<hr>
+                    </div>
+                  </div>
+                  <div class="span6">
+                  </div>
+                </div>	
+
+            <br>
+            <div class="row">
+
+
+              <div class="col-md-6">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h1 style="color:#A52A2A">Alertas 
+                      <!-- <small>Atención Inmediata</small>--></h1> 
+                      <input placeholder="Buscar" ng-model="q_alerta">
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">.</a>
+                          </li>
+                          <li><a href="#">.</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+
+                    <article class="media event" ng-repeat="veh in vehiculos | filter : q_alerta">
+                      <a class="pull-left date">
+                        <p class="month" style="color:#A52A2A">Oct.</p>
+                        <p class="day" style="color:#A52A2A">2</p>
+                      </a>
+                      <div class="media-body">
+                        <a class="title" href="#" style="color:#A52A2A">{{veh.placas}}</a>
+                        <p>{{veh.nombre}}, atención: 
+                          <b style="color:#A52A2A">Cambio de llantas</b>
+                          
+                          <hr>
+                        </p>
+                      </div>
+                    </article>
+
+			<!--
+                    <article class="media event">
+                      <a class="pull-left date">
+                        <p class="month" style="color:#A52A2A">April</p>
+                        <p class="day" style="color:#A52A2A">23</p>
+                      </a>
+                      <div class="media-body">
+                        <a class="title" href="#" style="color:#A52A2A">568EV2</a>
+                        <p>Vehiculo de reparto, atención: 
+                          <b style="color:#A52A2A">Cambio de llantas</b>
+                          <br>
+                          <a href="">ir al Mapa</a>
+                          <hr>
+                        </p>
+                      </div>
+                    </article>
+
+			-->
+
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h1 style="color:#DAA520">Alertas 
+                      <!-- <small>Sessions</small>-->
+                      </h1>
+                      <input placeholder="Buscar" ng-model="q_ap">
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+
+                    <article class="media event" ng-repeat="veh in vehiculos | filter : q_ap">
+                      <a class="pull-left date">
+                        <p class="month" style="color:#DAA520">Oct.</p>
+                        <p class="day" style="color:#DAA520">27</p>
+                      </a>
+                      <div class="media-body">
+                        <a class="title" href="#" style="color:#DAA520">EE37702</a>
+                        <p>Vehiculo de Carga, PANADERÍA, atención: <br>
+                          <b style="color:#DAA520">
+                            Servio de Motor
+                          </b>
+                         
+                          <hr>
+                          </p>
+                      </div>
+                    </article>
+
+			<!--
+                    <article class="media event">
+                      <a class="pull-left date">
+                        <p class="month" style="color:#DAA520">April</p>
+                        <p class="day" style="color:#DAA520">23</p>
+                      </a>
+                      <div class="media-body">
+                        <a class="title" href="#" style="color:#DAA520">568EV3</a>
+                        <p>Troca de reparto Foraneo, <br>
+                          <b style="color:#DAA520">
+                            Servio de Motor
+                          </b>
+                          <br>
+                          <a href="">ir al mapa</a>
+                          <hr>
+                          </p>
+                      </div>
+                    </article>
+				-->
+		
+                  </div>
+                </div>
+              </div>
+
+<!--
+              <div class="col-md-4">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h1>Status OK 
+                      
+                    </h1>
+                    <input placeholder="Buscar" ng-model="q">
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+
+                    <article class="media event" ng-repeat="veh in vehiculos | filter : q">
+                      <a class="pull-left date">
+                        <p class="month" style="color:#4682B4">April</p>
+                        <p class="day" style="color:#4682B4">23</p>
+                      </a>
+                      <div class="media-body">
+                        <a class="title" href="#" style="color:#4682B4" >568EV1</a>
+                        <p>Vehiculo de Reparto, <br>
+                          <b style="color:#4682B4">
+                            atención requerida - Llantas -
+                          </b>
+                          </p>
+                        
+                          <a href="">ir al mapa</a>
+                          <hr>
+                      </div>
+                    </article>
+
+                  </div>
+                </div>
+              </div>
+
+-->
+
+
+            </div>
+          </div>
+
+
+
+
+
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            <!-- Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>-->
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    
+    <!-- Bootstrap -->
+    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="../vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="../vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- jQuery Sparklines -->
+    <script src="../vendors/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+    <!-- Flot -->
+    <script src="../vendors/Flot/jquery.flot.js"></script>
+    <script src="../vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="../vendors/Flot/jquery.flot.time.js"></script>
+    <script src="../vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="../vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="../vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="../vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="../vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="../vendors/DateJS/build/date.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="../vendors/moment/min/moment.min.js"></script>
+    <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    
+    <!-- Custom Theme Scripts -->
+    <script src="../build/js/custom.min.js"></script>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js">
+    </script>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.js">
+    </script>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+
+
+    <script src="./js/app.js"></script>
+
+	<script src="js/bootstrap-datepicker.js"></script>
+  </body>
+</html>
+
+
+<script>
+
+		$(function(){
+			
+
+			$('#dp4').datepicker()
+				.on('changeDate', function(ev){
+					if (ev.date.valueOf() > endDate.valueOf()){
+						$('#alert').show().find('strong').text('The start date can not be greater then the end date');
+					} else {
+						$('#alert').hide();
+						startDate = new Date(ev.date);
+						$('#startDate').text($('#dp4').data('date'));
+					}
+                    console.log(new Date(ev.date));
+					$('#dp4').datepicker('hide');
+				});
+
+			$('#dp5').datepicker()
+				.on('changeDate', function(ev){
+					if (ev.date.valueOf() < startDate.valueOf()){
+						$('#alert').show().find('strong').text('The end date can not be less then the start date');
+					} else {
+						$('#alert').hide();
+						endDate = new Date(ev.date);
+						$('#endDate').text($('#dp5').data('date'));
+					}
+                    console.log(new Date(ev.date));
+					$('#dp5').datepicker('hide');
+				});
+
+
+
+
+       
+		});
+	</script>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+
+
+      //-----------------
+
+
+        $.get( "http://vps147303.vps.ovh.ca:3000/api/kms", function( data ) {
+          console.log(".-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.");
+          console.log(data);
+
+          var tableKms = $("#tableKms");
+
+
+          tableKms.append(
+
+              Hola
+          );
+
+          
+        });
+
+      //-----------------
+
+	var iniKm = $("#iniKm");
+	var actualKm = $("#actualKm");
+	var totalKm = $("#totalKm");
+
+
+      var map;
+      var ruta_P = [];
+
+      var socket = io.connect( { 'forceNew': true } );
+
+  		socket.on('msgs', function (data) {
+
+			console.log("msgs");
+          console.log(data);
+          console.log("numero de eventos: " + data.length);
+          //eventos = data;
+
+          if(data.length > 0) {
+
+            ruta_P= addRoutesMox(data);
+            var ev = getMyEventGPS(data[0]);
+	    var ev2 = getMyEventGPS(data[data.length-1]);
+
+		console.log(ev);
+		console.log(ev2);
+
+		if(ev2.odometer != undefined){
+		actualKm.text( parseInt ((ev2.odometer / 1000) + 142068));
+
+
+		$.get( "http://vps144683.vps.ovh.ca/ws/address.php?la=" + 
+			ev2.la + "&lo=" + ev2.lo, function( data ) {
+  			
+			$("#dirAc").html(data);
+			
+		});
+
+
+		}
+
+		if(ev.odometer != undefined)
+                iniKm.text( parseInt ((ev.odometer / 1000) + 142068));
+
+
+		
+		totalKm.text( - parseInt (iniKm.text())  
+				+  parseInt (actualKm.text()) 
+		);	
+
+		if(map == undefined)
+		map = new google.maps.Map(document.getElementById('map'), {
+    center: new google.maps.LatLng(ev.la, ev.lo),
+    zoom:12,
+    mapTypeId: 'terrain'
+  });
+
+
+	
+
+	
+
+
+            //RUTA
+            RP = new google.maps.Marker(
+            {
+              position: new google.maps.LatLng(ev.la, ev.lo),
+              //icon: 'images/R1.png',
+              map: map, title: 'Ruta Procesa!'
+            });
+    
+            //ruta_P.push(new google.maps.LatLng(28.240018, -105.446759));
+          	
+		//if(ev.odometer != undefined)
+		//iniKm.text(ev.odometer + " --");
+            var linea_P = new google.maps.Polyline(
+            {       path: ruta_P,
+                          map: map,
+                          strokeColor: '#131540',
+                          strokeWeight: 6,
+                          strokeOpacity: 0.6,
+                          clickable: true
+
+            });
+          }
+          		
+  		});
+
+
+  		socket.on('msg', function (data) {
+
+
+
+
+	console.log("msg");	
+	//console.log(data)
+	
+		var newRute = [ 	ruta_P[ruta_P.length-1],
+                                        getGpsLatLng(data)
+			      ];
+
+
+
+
+		var ev = getMyEventGPS(data);
+		
+		
+
+
+		$.get( "http://vps144683.vps.ovh.ca/ws/address.php?la=" + ev.la + "&lo=" + ev.lo, function( data ) {
+  			
+			$("#dirAc").html(data);
+			
+		});
+
+
+		console.log("getMyEventGPS ev:");
+		console.log(ev);
+		//map.setCenter([ev.la, ev.lo]);
+
+		if(ev.odometer != undefined)
+		actualKm.text( parseInt ((ev.odometer / 1000) + 142068));
+
+
+		totalKm.text( - parseInt(iniKm.text()) + parseInt (actualKm.text()) );
+
+
+		ruta_P.push(getGpsLatLng(data));
+
+                var linea_P = new google.maps.Polyline(
+                        {
+                                path: newRute,
+                                map: map,
+                                strokeColor: '#0066ff',
+                                strokeWeight: 6,
+                                strokeOpacity: 0.6,
+                                clickable: true
+                        }
+                );  		
+
+	
+  		});
+
+    });
+  </script>
+
+
