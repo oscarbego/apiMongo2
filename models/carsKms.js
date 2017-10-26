@@ -12,3 +12,4 @@ exports = module.exports = function(app, mongoose) {
 	mongoose.model('CarsKms', carsKmSchema);
 
 };
+

@@ -28,14 +28,13 @@ exports.addKmsEntry = function(req, res) {
 	console.log(req.body);
 
 	var kmsEntry = new CarsKms({
-		title:    req.body.title,
-		year: 	  req.body.year,
-		country:  req.body.country,
-		poster:   req.body.poster,
-		seasons:  req.body.seasons,
-		genre:    req.body.genre,
-		summary:  req.body.summary
+		imei:    req.body.imei,
+		iniKms: 	  req.body.iniKms,
+		finKms:  req.body.finKms,
+		fecha:   new Date(), //req.body.fecha,
+		kmsRecorridos:  req.body.kmsRecorridos
 	});
+
 
 	kmsEntry.save(function(err, kmsEntry) {
 		if(err) return res.send(500, err.message);
