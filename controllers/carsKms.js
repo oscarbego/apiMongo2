@@ -56,6 +56,27 @@ exports.addKmsEntry = function(req, res) {
 	});
 };
 
+
+exports.addKmsLocalEntry = function(entry) {
+	console.log('POST');
+	console.log(req.body);
+
+	var kmsEntry = new CarsKms({
+		imei:    entry.imei,
+		iniKms:  entry.iniKms,
+		finKms:  entry.finKms,
+		fecha:   new Date(), //req.body.fecha,
+		kmsRecorridos:  entry.kmsRecorridos
+	});
+
+
+	kmsEntry.save(function(err, kmsEntry) {
+		if(err) return err.message;
+    
+		return kmsEntry;
+	});
+};
+
 //PUT - Update a register already exists
 exports.updateKmsEntry = function(req, res) {
 	TVShow.findById(req.params.id, function(err, tvshow) {

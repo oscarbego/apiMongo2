@@ -54,20 +54,15 @@ var j = schedule.scheduleJob(rule, function () {
     se recupera el primer evento desde la variable
     se recupera el ultimo evento desde el arreglo de eventos
   */
-  var kmsEntry = new CarsKms({
+  var entry = {
 		imei:    862462035861144,
 		iniKms:  primerEventoDia.finKms, //primerEventoDia.data[11].value,
 		finKms:  eventos[eventos.length - 1].data[11].value,
 		fecha:   new Date(),
 		kmsRecorridos:  primerEventoDia.data[11].value - eventos[eventos.length - 1].data[11].value
-	});
+	};
 
-
-	kmsEntry.save(function(err, kmsEntry) {
-		if(err) console.log("Error in save");
-    console.log("Save OK");
-	});
-
+  CarsKmsCtrl.addKmsLocalEntry(entry);
 
   primerEventoDia == undefined;
   eventos = [];
