@@ -25,7 +25,7 @@ exports.findById = function(req, res) {
 
 //GET - Return a TVShow with specified ID
 exports.findLast = function() {
-	CarsKms.find({}, {limit: 1}).toArray(function(err, docs){
+	CarsKms.find({}, {limit: 1}, function(err, docs){
 
   		console.log(docs);
   		if(docs.length > 0)
