@@ -44,9 +44,11 @@ function add ($scope, $http, $location) {
 
 	$scope.add = function (kms) {
 	
+        console.log(".-.-.-.-.");
         kms.fecha = new Date("2017-10-14")
 
         console.log(kms);
+
 		$http.post("api/kms", kms ).success(
 			function (data) {
 	
