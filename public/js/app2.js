@@ -42,15 +42,13 @@ function add ($scope, $http, $location) {
 
 	console.log("Add Ctrl");
 
-	$scope.generos = ['Drama', 'Fantasy', 'Sci-Fi', 'Thriller', 'Comedy'];
-
-	$scope.add = function (tvShow) {
+	$scope.add = function (kms) {
 	
-		$http.post("api/tvshows", tvShow ).success(
+		$http.post("api/kms", kms ).success(
 			function (data) {
 	
 				console.log(data);
-				$location.path('/');   	
+				//$location.path('/');   	
 			}
 		);	
 	}
