@@ -58,9 +58,7 @@ exports.addKmsEntry = function(req, res) {
 
 
 exports.addKmsLocalEntry = function(entry) {
-	console.log('POST');
-	console.log(req.body);
-
+	
 	var kmsEntry = new CarsKms({
 		imei:    entry.imei,
 		iniKms:  entry.iniKms,
