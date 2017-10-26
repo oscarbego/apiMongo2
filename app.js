@@ -12,7 +12,10 @@ var fs = require('fs');
 var writable = fs.createWriteStream('file-buff.json');
 
 
-
+function sumarDias(fecha, dias){
+  fecha.setDate(fecha.getDate() + dias);
+  return fecha;
+}
 
 app.use(express.static(__dirname + '/public'));
 
@@ -20,6 +23,67 @@ function sumarDias(fecha, dias){
   fecha.setDate(fecha.getDate() + dias);
   return fecha;
 }
+
+
+// app procesa ----------------------------
+
+var eventos = [];
+
+
+var rule = new schedule.RecurrenceRule();
+  rule.dayOfWeek = [0, new schedule.Range(0, 6)];
+  rule.hour = 9;
+  rule.minute = 0;
+
+var j = schedule.scheduleJob(rule, function () {
+  console.log('Alarma ');
+  eventos = [];
+});
+
+
+var Retranslator = require('./wialon-re');
+var retranslator = new Retranslator({ port: 20163 });
+
+retranslator.emitter.on('message', (msg) => 
+  {
+
+    //console.log(JSON.stringify(msg, null, 2), { encoding: 'utf8' });
+    
+    //863835024736063, 862462035861144
+    if(msg.controllerId == 862462035861144){	
+    
+    //if(eventos.length > 10)
+    //  eventos.shift();
+
+    eventos.push(msg);
+    io.sockets.emit('msg', msg);
+    //io.sockets.emit('msg', eventos);
+    //writable.write(JSON.stringify(msg, null, 2), { encoding: 'utf8' });
+  }
+});
+
+retranslator.start();
+
+
+
+io.on('connection', function(socket) {
+
+  socket.emit('msgs', eventos);
+  
+  socket.on('new-msg', function(data) {
+    
+    eventos.push(data);
+    
+    io.sockets.emit('msg', data);
+  });
+
+});
+
+
+
+// ----------------------------------------
+
+
 
 
 // Connection to DB
