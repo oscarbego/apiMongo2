@@ -65,8 +65,9 @@ exports.deleteKmsEntry = function(req, res) {
 	CarsKms.findById(req.params.id, function(err, kmsEntry) {
 		console.log(kmsEntry);
 		kmsEntry.remove(function(err) {
+			console.log("in delete");
 			if(err) return res.send(500, err.message);
-      res.status(200);
+      		res.status(200);
 		})
 	});
 };
