@@ -22,6 +22,20 @@ exports.findById = function(req, res) {
 	});
 };
 
+
+//GET - Return a TVShow with specified ID
+exports.findLast = function() {
+	CarsKms.find({}, {limit: 1}).toArray(function(err, docs){
+
+  		console.log(docs);
+  		if(docs.length > 0)
+    		return docs[0];
+	});
+};
+
+
+
+
 //POST - Insert a new TVShow in the DB
 exports.addKmsEntry = function(req, res) {
 	console.log('POST');

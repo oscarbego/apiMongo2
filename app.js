@@ -34,16 +34,11 @@ var eventos = [];
 
 
 
-var primerEventoDia;
+var primerEventoDia = undefined;
 
 
 
-CarsKms.find({}, {limit: 1}).toArray(function(err, docs){
 
-  console.log(docs);
-  if(docs.length > 0)
-    primerEventoDia = docs[0];
-});
 
 var rule = new schedule.RecurrenceRule();
   rule.dayOfWeek = [0, new schedule.Range(0, 6)];
@@ -188,6 +183,7 @@ app.use(router);
 // API routes
 var kms = express.Router();
 
+
 kms.route('/kms')
   .get(CarsKmsCtrl.getAllKmsEntrys)
   .post(CarsKmsCtrl.addKmsEntry);
@@ -206,6 +202,8 @@ server.listen(3000, function() {
   console.log("Servidor corriendo en puerto 3000");
 });
 
+
+primerEventoDia = CarsKmsCtrl.findLast();
 
 /*
 
