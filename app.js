@@ -25,9 +25,12 @@ function sumarDias(fecha, dias){
 }
 
 
+var CarsKms  = mongoose.model('CarsKms');
+
 // app procesa ----------------------------
 
 var eventos = [];
+var primerEventoDia;
 
 
 var rule = new schedule.RecurrenceRule();
@@ -37,7 +40,32 @@ var rule = new schedule.RecurrenceRule();
 
 var j = schedule.scheduleJob(rule, function () {
   console.log('Alarma ');
+
+  
+    
+  //save in mongodb
+  /*
+    se recupera el primer evento desde la variable
+    se recupera el ultimo evento desde el arreglo de eventos
+  */
+  var kmsEntry = new CarsKms({
+		imei:    862462035861144,
+		iniKms:  0,
+		finKms:  0,
+		fecha:   new Date(),
+		kmsRecorridos:  0
+	});
+
+
+	kmsEntry.save(function(err, kmsEntry) {
+		if(err) console.log("Error in save");
+    console.log("Save OK");
+	});
+
+
+  primerEventoDia == undefined;
   eventos = [];
+  
 });
 
 
@@ -52,11 +80,16 @@ retranslator.emitter.on('message', (msg) =>
     //863835024736063, 862462035861144
     if(msg.controllerId == 862462035861144){	
     
+
+    if(primerEventoDia == undefined)
+      primerEventoDia = msg;
+    
     //if(eventos.length > 10)
     //  eventos.shift();
 
     eventos.push(msg);
     io.sockets.emit('msg', msg);
+    console.log(msg);
     //io.sockets.emit('msg', eventos);
     //writable.write(JSON.stringify(msg, null, 2), { encoding: 'utf8' });
   }
