@@ -31,13 +31,24 @@ function sumarDias(fecha, dias){
 // app procesa ----------------------------
 
 var eventos = [];
+
+
+
 var primerEventoDia;
 
 
+
+CarsKms.find({}, {limit: 1}).toArray(function(err, docs){
+
+  console.log(docs);
+  if(docs.length > 0)
+    primerEventoDia = docs[0];
+});
+
 var rule = new schedule.RecurrenceRule();
   rule.dayOfWeek = [0, new schedule.Range(0, 6)];
-  rule.hour = 9; //rule.hour = 9;
-  rule.minute = 0;
+  rule.hour = 14; //rule.hour = 9;
+  rule.minute = 10;
 
 var j = schedule.scheduleJob(rule, function () {
   console.log('Alarma ');
@@ -50,7 +61,7 @@ var j = schedule.scheduleJob(rule, function () {
   */
   var kmsEntry = new CarsKms({
 		imei:    862462035861144,
-		iniKms:  primerEventoDia.data[11].value,
+		iniKms:  primerEventoDia.finKms, //primerEventoDia.data[11].value,
 		finKms:  eventos[eventos.length - 1].data[11].value,
 		fecha:   new Date(),
 		kmsRecorridos:  primerEventoDia.data[11].value - eventos[eventos.length - 1].data[11].value
@@ -68,6 +79,33 @@ var j = schedule.scheduleJob(rule, function () {
 
 });
 
+/*
+
+
+{ controllerId: '862462035861144',
+  time: 2017-10-26T18:38:47.000Z,
+  posInfo: true,
+  digInputInfo: true,
+  digOutInfo: false,
+  alarm: false,
+  driversIdInfo: false,
+  data: 
+   [ { name: 'posinfo', value: [Object] },
+     { name: 'hdop', value: 0.8 },
+     { name: 'io_caused', value: '7' },
+     { name: 'io_1_176', value: '0' },
+     { name: 'io_1_88', value: '0' },
+     { name: 'gsm_signal', value: '14' },
+     { name: 'modem_temp', value: '40' },
+     { name: 'modem_temp', value: '40' },
+     { name: 'battery', value: '3982' },
+     { name: 'power', value: '13084' },
+     { name: 'din4_hours', value: '0' },
+     { name: 'odometer', value: '10873488' },
+     { name: 'io_4_77', value: '0' },
+     { name: 'avl_inputs', value: '0' } ] }
+
+ */
 
 var Retranslator = require('./wialon-re');
 var retranslator = new Retranslator({ port: 20163 });
@@ -168,10 +206,11 @@ server.listen(3000, function() {
   console.log("Servidor corriendo en puerto 3000");
 });
 
+
 /*
+
 app.listen(3000, function() {
   console.log("Node server running on http://localhost:3000");
 });
 
 */
-
