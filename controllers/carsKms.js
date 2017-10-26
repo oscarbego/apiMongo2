@@ -29,7 +29,7 @@ exports.addKmsEntry = function(req, res) {
 
 	var kmsEntry = new CarsKms({
 		imei:    req.body.imei,
-		iniKms: 	  req.body.iniKms,
+		iniKms:  req.body.iniKms,
 		finKms:  req.body.finKms,
 		fecha:   new Date(), //req.body.fecha,
 		kmsRecorridos:  req.body.kmsRecorridos
@@ -60,9 +60,10 @@ exports.updateKmsEntry = function(req, res) {
 	});
 };
 
-//DELETE - Delete a TVShow with specified ID
+//DELETE - Delete a TVShow with specified ID deleteKmsEntry
 exports.deleteKmsEntry = function(req, res) {
 	CarsKms.findById(req.params.id, function(err, kmsEntry) {
+		console.log(kmsEntry);
 		kmsEntry.remove(function(err) {
 			if(err) return res.send(500, err.message);
       res.status(200);
