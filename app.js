@@ -25,6 +25,7 @@ function sumarDias(fecha, dias){
 }
 
 
+var mongoose = require('mongoose');
 var CarsKms  = mongoose.model('CarsKms');
 
 // app procesa ----------------------------
@@ -65,7 +66,7 @@ var j = schedule.scheduleJob(rule, function () {
 
   primerEventoDia == undefined;
   eventos = [];
-  
+
 });
 
 
