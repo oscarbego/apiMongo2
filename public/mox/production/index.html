@@ -1597,6 +1597,20 @@ data-toggle="collapse" data-target="#demo">Altas</button>
     $(document).ready(function(){
 
 
+
+      //-----------------
+
+
+        $.get( "http://vps147303.vps.ovh.ca:3000/api/kms", function( data ) {
+          console.log(data);
+
+          
+        });
+
+      //-----------------
+
+
+
 	var iniKm = $("#iniKm");
 	var actualKm = $("#actualKm");
 
