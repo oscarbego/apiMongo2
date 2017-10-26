@@ -4,6 +4,22 @@ var express         = require("express"),
     methodOverride  = require("method-override"),
     mongoose        = require('mongoose');
 
+    
+var server = require('http').Server(app);
+var io   = require('socket.io')(server);
+var schedule = require('node-schedule');
+var fs = require('fs');
+var writable = fs.createWriteStream('file-buff.json');
+
+
+app.use(express.static('public'));
+
+function sumarDias(fecha, dias){
+  fecha.setDate(fecha.getDate() + dias);
+  return fecha;
+}
+
+
 // Connection to DB
 mongoose.connect('mongodb://localhost/tvshows', function(err, res) {
   if(err) throw err;
@@ -45,7 +61,16 @@ kms.route('/kms/:id')
 app.use('/api', kms);
 
 // Start server
+
+
+server.listen(3000, function() {
+  console.log("Servidor corriendo en puerto 3000");
+});
+
+/*
 app.listen(3000, function() {
   console.log("Node server running on http://localhost:3000");
 });
+
+*/
 
