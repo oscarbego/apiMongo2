@@ -200,6 +200,8 @@ server.listen(3000, function() {
 
 primerEventoDia = CarsKmsCtrl.findLast();
 
+console.log("primerEventoDia");
+console.log(primerEventoDia);
 /*
 
 app.listen(3000, function() {
