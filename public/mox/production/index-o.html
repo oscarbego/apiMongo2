@@ -340,7 +340,9 @@
 				</tbody>
 			</table>
 			
-			<div class="row" id="tableKms">
+			<div id="tableKms">
+          <div class="row"> 
+
                                 <div class="col-lg-3">
                                         <h4>Fecha: 20 Oct 2017</h4>
                                 </div>
@@ -354,6 +356,7 @@
                                         <h4>Km Recorridos: 60</h4>
                                 </div>
                         </div>
+          </div>
 
 			<div class="row">
 				<div class="col-lg-3">
@@ -720,7 +723,7 @@ console.log(`Yo, ${name}!`);
 
           for (var index = 0; index < data.length; index++) {
             tableKms.append(
-              `
+              `     <div class="row"> 
                                 <div class="col-lg-3">
                                         <h4>Fecha: ${data[index].fecha} </h4>
                                 </div>
@@ -733,6 +736,7 @@ console.log(`Yo, ${name}!`);
                                 <div class="col-lg-3">
                                         <h4>Km Recorridos: ${data[index].kmsRecorridos}</h4>
                                 </div>
+                    </div>
               `
             );
             
