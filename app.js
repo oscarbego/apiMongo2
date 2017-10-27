@@ -40,7 +40,7 @@ var primerEventoDia = undefined;
 var rule = new schedule.RecurrenceRule();
   rule.dayOfWeek = [0, new schedule.Range(0, 6)];
   rule.hour = 11; //rule.hour = 9;
-  rule.minute = 27;
+  rule.minute = 30;
 
 var j = schedule.scheduleJob(rule, function () {
   console.log('Alarma ');
@@ -51,6 +51,11 @@ var j = schedule.scheduleJob(rule, function () {
     se recupera el primer evento desde la variable
     se recupera el ultimo evento desde el arreglo de eventos
   */
+
+  console.log(eventos[eventos.length - 1].data[11].value);
+  console.log(eventos[eventos.length - 1]);
+
+
   var entry = {
 		imei:    862462035861144,
 		iniKms:  primerEventoDia.finKms, //primerEventoDia.data[11].value,
