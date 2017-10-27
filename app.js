@@ -64,7 +64,7 @@ var j = schedule.scheduleJob(rule, function () {
 		imei:    862462035861144,
 		iniKms:  primerEventoDia.data[11].value, //primerEventoDia.data[11].value,
 		finKms:  eventos[eventos.length - 1].data[11].value,
-		fecha:   new Date(),
+		fecha:   new Date().addHours(2),
 		kmsRecorridos: eventos[eventos.length - 1].data[11].value - primerEventoDia.data[11].value
 	};
 
