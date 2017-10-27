@@ -64,6 +64,9 @@ var j = schedule.scheduleJob(rule, function () {
 		kmsRecorridos:  primerEventoDia.data[11].value - eventos[eventos.length - 1].data[11].value
 	};
 
+
+  console.log("entry");
+  console.log(entry);
   CarsKmsCtrl.addKmsLocalEntry(entry);
 
   primerEventoDia == eventos[eventos.length - 1];
