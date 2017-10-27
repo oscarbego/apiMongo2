@@ -39,7 +39,7 @@ var primerEventoDia = undefined;
 
 var rule = new schedule.RecurrenceRule();
   rule.dayOfWeek = [0, new schedule.Range(0, 6)];
-  rule.hour = 12; //rule.hour = 9;
+  rule.hour = 14; //rule.hour = 9;
   rule.minute = 35;
 
 var j = schedule.scheduleJob(rule, function () {
