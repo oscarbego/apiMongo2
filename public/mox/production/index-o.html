@@ -729,6 +729,10 @@ console.log(`Yo, ${name}!`);
 
 
           for (var index = 0; index < data.length; index++) {
+
+            console.log(moment(data[index].fecha).format("DD/MM/YYYY"));
+            
+
             tableKms.append(
               `     <div class="row"> 
                                 <div class="col-lg-3">
