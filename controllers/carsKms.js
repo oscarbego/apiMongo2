@@ -28,7 +28,7 @@ exports.findLast = function() {
 	CarsKms.find({}, {limit: 1}, function(err, docs){
 
 		console.log("findLast");
-  		console.log(docs);
+  		console.log(docs[0]);
   		if(docs.length > 0)
     		return docs[0];
 	});
