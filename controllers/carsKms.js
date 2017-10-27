@@ -27,13 +27,6 @@ exports.findById = function(req, res) {
 exports.findLast = function() {
 
 
-	CarsKms.limit(1).exec(function(data){
-
-		console.log(data);
-	});
-
-
-
 	CarsKms.find({}, {limit: 1}, function(err, docs){
 
 		console.log("findLast");
