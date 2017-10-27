@@ -25,6 +25,16 @@ exports.findById = function(req, res) {
 
 //GET - Return a TVShow with specified ID
 exports.findLast = function() {
+
+
+	var q = models.Post.find({}).limit(1);
+		CarsKms.execFind(function(err, posts) {
+  		console.log(posts);
+		console.log(posts[0]);
+	});
+
+
+
 	CarsKms.find({}, {limit: 1}, function(err, docs){
 
 		console.log("findLast");
