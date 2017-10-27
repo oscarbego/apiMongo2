@@ -26,13 +26,19 @@ exports.findById = function(req, res) {
 //GET - Return a TVShow with specified ID
 exports.findLast = function() {
 
-
+	/*
 	CarsKms.find({}, {limit: 1}, function(err, docs){
 
 		console.log("findLast");
   		console.log(docs[0]);
   		if(docs.length > 0)
     		return docs[0];
+	});
+	*/
+
+	CarsKms.find(function(err, kmsEntrys) {
+    
+		return kmsEntrys[0];
 	});
 };
 
