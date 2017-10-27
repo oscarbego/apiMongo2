@@ -65,7 +65,7 @@ var j = schedule.scheduleJob(rule, function () {
 		iniKms:  primerEventoDia.data[11].value, //primerEventoDia.data[11].value,
 		finKms:  eventos[eventos.length - 1].data[11].value,
 		fecha:   new Date(),
-		kmsRecorridos:  primerEventoDia.data[11].value - eventos[eventos.length - 1].data[11].value
+		kmsRecorridos: eventos[eventos.length - 1].data[11].value - primerEventoDia.data[11].value
 	};
 
 
