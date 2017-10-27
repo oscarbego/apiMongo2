@@ -115,7 +115,7 @@ router.delete('/:id', function(req, res, next) {
 exports.deleteKmsEntry = function(req, res) {
 	
 	CarsKms.findByIdAndRemove(req.params.id, req.body, function (err, kmsEntry) {
-    	if (err) return next(err);
+    	if (err) return res.send(500, err.message); //next(err);
     		res.json(kmsEntry);
   	});
 	/*CarsKms.findById(req.params.id, function(err, kmsEntry) {
