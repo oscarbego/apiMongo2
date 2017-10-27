@@ -714,11 +714,26 @@
 
           var tableKms = $("#tableKms");
 
+var name = "Brendan";
+console.log(`Yo, ${name}!`);
+
 
           for (var index = 0; index < data.length; index++) {
             tableKms.append(
-
-              "Hola"
+              `
+                                <div class="col-lg-3">
+                                        <h4>Fecha: ${data.fecha} 20 Oct 2017</h4>
+                                </div>
+                                <div class="col-lg-3">
+                                        <h4>Km Inicial: 151932</h4>
+                                </div>
+                                <div class="col-lg-3">
+                                        <h4>Km Final: 151992</h4>
+                                </div>
+                                <div class="col-lg-3">
+                                        <h4>Km Recorridos: 60</h4>
+                                </div>
+              `
             );
             
           }
