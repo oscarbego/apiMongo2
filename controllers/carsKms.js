@@ -37,7 +37,8 @@ exports.findLast = function() {
 	*/
 
 	CarsKms.find(function(err, kmsEntrys) {
-    
+		if(err) console.log("Error");
+		console.log(kmsEntrys);
 		return kmsEntrys[0];
 	});
 };
