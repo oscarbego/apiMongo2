@@ -64,8 +64,9 @@ var j = schedule.scheduleJob(rule, function () {
 
   CarsKmsCtrl.addKmsLocalEntry(entry);
 
-  primerEventoDia == undefined;
+  primerEventoDia == eventos[eventos.length - 1];
   eventos = [];
+  eventos.push(primerEventoDia);
 
 });
 
