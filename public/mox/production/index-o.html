@@ -730,13 +730,13 @@ console.log(`Yo, ${name}!`);
 
           for (var index = 0; index < data.length; index++) {
 
-            console.log(moment(data[index].fecha).format("DD/MM/YYYY HH:mm:ss"));
+            //console.log(moment(data[index].fecha).format("DD/MM/YYYY HH:mm:ss"));
             
 
             tableKms.append(
               `     <div class="row"> 
                                 <div class="col-lg-3">
-                                        <h4>Fecha: ${moment(data[index].fecha).format("DD/MM/YYYY HH:mm:ss")} </h4>
+                                        <h4>Fecha: ${moment(data[index].fecha).format("DD/MM/YYYY")} </h4>
                                 </div>
                                 <div class="col-lg-3">
                                         <h4>Km Inicial: ${data[index].iniKms}</h4>
