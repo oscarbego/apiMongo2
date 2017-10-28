@@ -10,7 +10,8 @@
     "node-schedule": "*",
     "mongodb": "*",
     "mongoose": "~3.6.11",
-    "body-parser": "^1.5.1"
+    "body-parser": "^1.5.1",
+    "moment-timezone": "*"
   },
   "devDependencies": {
     "babel": "~5.8.38",

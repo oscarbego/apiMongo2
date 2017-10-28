@@ -39,8 +39,8 @@ var primerEventoDia = undefined;
 
 var rule = new schedule.RecurrenceRule();
   rule.dayOfWeek = [0, new schedule.Range(0, 6)];
-  rule.hour = 0; //rule.hour = 9;
-  rule.minute = 47;
+  rule.hour = 8; //rule.hour = 9;
+  rule.minute = 55;
 
 var j = schedule.scheduleJob(rule, function () {
   console.log('Alarma ');
@@ -63,6 +63,10 @@ var j = schedule.scheduleJob(rule, function () {
 
   var d = new Date();
   d.setHours(d.getHours() + 2);
+
+  console.log("moment");
+  var dd    = moment.tz(new Date(), "America/Chihuahua");
+  console.log(dd);
 
   var iniKms = primerEventoDia.data[11].value;
   var finKms = eventos[eventos.length - 1].data[11].value;
