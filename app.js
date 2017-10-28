@@ -4,7 +4,7 @@ var express         = require("express"),
     methodOverride  = require("method-override"),
     mongoose        = require('mongoose');
 
-var moment = require('moment-timezone');
+//var moment = require('moment-timezone');
     
 var server = require('http').Server(app);
 var io   = require('socket.io')(server);
@@ -13,7 +13,7 @@ var fs = require('fs');
 var writable = fs.createWriteStream('file-buff.json');
 
 
-moment().tz("America/Chihuahua").format();
+//moment().tz("America/Chihuahua").format();
 
 
 function sumarDias(fecha, dias){
@@ -44,7 +44,7 @@ var primerEventoDia = undefined;
 var rule = new schedule.RecurrenceRule();
   rule.dayOfWeek = [0, new schedule.Range(0, 6)];
   rule.hour = 9; //rule.hour = 9;
-  rule.minute = 30;
+  rule.minute = 40;
 
 var j = schedule.scheduleJob(rule, function () {
   console.log('Alarma ');
@@ -67,13 +67,8 @@ var j = schedule.scheduleJob(rule, function () {
 
   var d = new Date();
   d.setHours(d.getHours() + 2);
-  console.log("d");
-  console.log(d);
-
-  console.log("moment");
-  var dd    = moment.tz(new Date(), "America/Chihuahua");
-  console.log(dd);
-
+  
+  
   var iniKms = primerEventoDia.data[11].value;
   var finKms = eventos[eventos.length - 1].data[11].value;
 

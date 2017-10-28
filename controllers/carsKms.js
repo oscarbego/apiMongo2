@@ -73,7 +73,7 @@ exports.addKmsLocalEntry = function(entry) {
 		imei:    entry.imei,
 		iniKms:  entry.iniKms,
 		finKms:  entry.finKms,
-		fecha:   new Date(), //req.body.fecha,
+		fecha:   entry.fecha,
 		kmsRecorridos:  entry.kmsRecorridos
 	});
 
