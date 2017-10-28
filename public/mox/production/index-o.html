@@ -793,13 +793,15 @@ console.log(`Yo, ${name}!`);
 		if(ev2.odometer != undefined){
 		actualKm.text( parseInt ((ev2.odometer / 1000) + 142068));
 
-
-		$.get( "http://vps147303.vps.ovh.ca/ws/address.php?la=" + 
+          //http://vps147303.vps.ovh.ca/ws/address.php?la=28.60885&lo=-106.0341316
+		/*
+    $.get( "http://vps147303.vps.ovh.ca/ws/address.php?la=" + 
 			ev2.la + "&lo=" + ev2.lo, function( data ) {
   			console.log(data);
 			$("#dirAc").html(data);
 			
 		});
+    */
 
 
 		}
