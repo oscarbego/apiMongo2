@@ -794,9 +794,9 @@ console.log(`Yo, ${name}!`);
 		actualKm.text( parseInt ((ev2.odometer / 1000) + 142068));
 
 
-		$.get( "http://vps144683.vps.ovh.ca/ws/address.php?la=" + 
+		$.get( "http://vps147303.vps.ovh.ca/ws/address.php?la=" + 
 			ev2.la + "&lo=" + ev2.lo, function( data ) {
-  			
+  			console.log(data);
 			$("#dirAc").html(data);
 			
 		});
