@@ -40,7 +40,7 @@ var primerEventoDia = undefined;
 var rule = new schedule.RecurrenceRule();
   rule.dayOfWeek = [0, new schedule.Range(0, 6)];
   rule.hour = 0; //rule.hour = 9;
-  rule.minute = 28;
+  rule.minute = 47;
 
 var j = schedule.scheduleJob(rule, function () {
   console.log('Alarma ');
@@ -50,6 +50,7 @@ var j = schedule.scheduleJob(rule, function () {
   /*
     se recupera el primer evento desde la variable
     se recupera el ultimo evento desde el arreglo de eventos
+    parseInt ((ev.odometer / 1000) + 142068)
   */
 
   console.log(eventos[eventos.length - 1].data[11].value);
@@ -63,14 +64,20 @@ var j = schedule.scheduleJob(rule, function () {
   var d = new Date();
   d.setHours(d.getHours() + 2);
 
+  var iniKms = primerEventoDia.data[11].value;
+  var finKms = eventos[eventos.length - 1].data[11].value;
+
+  iniKms = parseInt ((iniKms / 1000) + 142068);
+
+  finKms = parseInt ((finKms / 1000) + 142068);
   
 
   var entry = {
 		imei:    862462035861144,
-		iniKms:  primerEventoDia.data[11].value, //primerEventoDia.data[11].value,
-		finKms:  eventos[eventos.length - 1].data[11].value,
+		iniKms:  iniKms, //primerEventoDia.data[11].value,
+		finKms:  finKms,
 		fecha:   d,
-		kmsRecorridos: eventos[eventos.length - 1].data[11].value - primerEventoDia.data[11].value
+		kmsRecorridos: finKms - iniKms
 	};
 
 
