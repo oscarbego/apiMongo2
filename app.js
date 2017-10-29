@@ -232,6 +232,7 @@ CarsKmsCtrl.findLast( data => {
   primerEventoDia = data;
   console.log("inner");
   console.log(primerEventoDia);
+  eventos.push(primerEventoDia);
 });
 
 
