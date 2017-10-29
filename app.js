@@ -44,7 +44,7 @@ var primerEventoDia = undefined;
 var rule = new schedule.RecurrenceRule();
   rule.dayOfWeek = [0, new schedule.Range(0, 6)];
   rule.hour = 10; //rule.hour = 9;
-  rule.minute = 15;
+  rule.minute = 18;
 
 var j = schedule.scheduleJob(rule, function () {
   console.log('Alarma ');
@@ -57,6 +57,7 @@ var j = schedule.scheduleJob(rule, function () {
     parseInt ((ev.odometer / 1000) + 142068)
   */
 
+  console.log("count: " + eventos.length );
   console.log(eventos[eventos.length - 1].data[11].value);
   console.log(eventos[eventos.length - 1]);
 
