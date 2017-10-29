@@ -24,7 +24,7 @@ exports.findById = function(req, res) {
 
 
 //GET - Return a CarsKms with specified ID
-exports.findLast = function() {
+exports.findLast = function(fun) {
 
 	/*
 	CarsKms.find({}, {limit: 1}, function(err, docs){
@@ -40,6 +40,7 @@ exports.findLast = function() {
 		if(err) console.log("Error");
 		console.log("findLast");
 		console.log(kmsEntrys);
+		fun(kmsEntrys);
 		return kmsEntrys[0];
 	});
 };

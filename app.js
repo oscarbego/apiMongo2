@@ -225,7 +225,11 @@ server.listen(3000, function() {
 });
 
 
-primerEventoDia = CarsKmsCtrl.findLast();
+primerEventoDia = CarsKmsCtrl.findLast(function(data){
+
+  console.log("data");
+  console.log(data);
+});
 
 console.log("primerEventoDia");
 console.log(primerEventoDia);
