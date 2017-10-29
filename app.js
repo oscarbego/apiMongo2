@@ -93,6 +93,7 @@ var j = schedule.scheduleJob(rule, function () {
   primerEventoDia == eventos[eventos.length - 1];
   eventos = [];
   eventos.push(primerEventoDia);
+  console.log(eventos);
 
 });
 
