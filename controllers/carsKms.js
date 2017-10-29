@@ -40,7 +40,7 @@ exports.findLast = function(fun) {
 		if(err) console.log("Error");
 		console.log("findLast");
 		console.log(kmsEntrys);
-		fun(kmsEntrys);
+		fun(kmsEntrys[0]);
 		return kmsEntrys[0];
 	});
 };
