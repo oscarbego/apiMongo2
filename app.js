@@ -93,7 +93,7 @@ var j = schedule.scheduleJob(rule, function () {
   primerEventoDia == eventos[eventos.length - 1];
   eventos = [];
   eventos.push(primerEventoDia);
-  console.log(eventos);
+  
 
 });
 
@@ -234,6 +234,7 @@ CarsKmsCtrl.findLast( data => {
   console.log("inner");
   console.log(primerEventoDia);
   eventos.push(primerEventoDia);
+  console.log(eventos);
 });
 
 
