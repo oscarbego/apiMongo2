@@ -2,7 +2,7 @@
 var mongoose = require('mongoose');
 var CarsKms  = mongoose.model('CarsKms');
 
-//GET - Return all tvshows in the DB
+//GET - Return all CarsKms in the DB
 exports.getAllKmsEntrys = function(req, res) {
 	CarsKms.find(function(err, kmsEntrys) {
     if(err) res.send(500, err.message);
@@ -12,7 +12,7 @@ exports.getAllKmsEntrys = function(req, res) {
 	});
 };
 
-//GET - Return a TVShow with specified ID
+//GET - Return a CarsKms with specified ID
 exports.findById = function(req, res) {
 	CarsKms.findById(req.params.id, function(err, kmsEntry) {
     if(err) return res.send(500, err.message);
@@ -23,7 +23,7 @@ exports.findById = function(req, res) {
 };
 
 
-//GET - Return a TVShow with specified ID
+//GET - Return a CarsKms with specified ID
 exports.findLast = function() {
 
 	/*
@@ -38,6 +38,7 @@ exports.findLast = function() {
 
 	CarsKms.find(function(err, kmsEntrys) {
 		if(err) console.log("Error");
+		console.log("findLast");
 		console.log(kmsEntrys);
 		return kmsEntrys[0];
 	});
@@ -46,7 +47,7 @@ exports.findLast = function() {
 
 
 
-//POST - Insert a new TVShow in the DB
+//POST - Insert a new CarsKms in the DB
 exports.addKmsEntry = function(req, res) {
 	console.log('POST');
 	console.log(req.body);
@@ -103,7 +104,7 @@ exports.updateKmsEntry = function(req, res) {
 	});
 };
 
-//DELETE - Delete a TVShow with specified ID deleteKmsEntry
+//DELETE - Delete a CarsKms with specified ID deleteKmsEntry
 /* DELETE /todos/:id  
 router.delete('/:id', function(req, res, next) {
   Todo.findByIdAndRemove(req.params.id, req.body, function (err, post) {
