@@ -57,7 +57,7 @@ exports.addKmsEntry = function(req, res) {
 		imei:    req.body.imei,
 		iniKms:  req.body.iniKms,
 		finKms:  req.body.finKms,
-		fecha:   new Date(), //req.body.fecha,
+		fecha:   req.body.fecha, //new Date(),
 		kmsRecorridos:  req.body.kmsRecorridos
 	});
 
