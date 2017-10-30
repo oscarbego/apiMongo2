@@ -72,7 +72,12 @@ var j = schedule.scheduleJob(rule, function () {
   
   
   var iniKms = primerEventoDia.finKms;
-  var finKms = eventos[eventos.length - 1].data[11].value;
+
+  var finKms = eventos.length - 1].data != undefined ? 
+      eventos[eventos.length - 1].data[11].value
+    : primerEventoDia.finKms;
+  
+    eventos[eventos.length - 1].data[11].value;
 
   iniKms = parseInt ((iniKms / 1000) + 142068);
 
