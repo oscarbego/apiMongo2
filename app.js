@@ -43,8 +43,8 @@ var primerEventoDia = undefined;
 
 var rule = new schedule.RecurrenceRule();
   rule.dayOfWeek = [0, new schedule.Range(0, 6)];
-  rule.hour = 10; //rule.hour = 9;
-  rule.minute = 50;
+  rule.hour = 17; //rule.hour = 9;
+  rule.minute = 20;
 
 var j = schedule.scheduleJob(rule, function () {
   console.log('Alarma ');
@@ -59,8 +59,8 @@ var j = schedule.scheduleJob(rule, function () {
 
   console.log("count: " + eventos.length );
   console.log(eventos);
-  console.log(eventos[eventos.length - 1].data[11].value);
-  console.log(eventos[eventos.length - 1]);
+  //console.log(eventos[eventos.length - 1].data[11].value);
+  //console.log(eventos[eventos.length - 1]);
 
   console.log("primerEventoDia");
   console.log(primerEventoDia);
@@ -71,7 +71,7 @@ var j = schedule.scheduleJob(rule, function () {
   d.setHours(d.getHours() + 2);
   
   
-  var iniKms = primerEventoDia.data[11].value;
+  var iniKms = primerEventoDia.finKms;
   var finKms = eventos[eventos.length - 1].data[11].value;
 
   iniKms = parseInt ((iniKms / 1000) + 142068);
@@ -235,8 +235,8 @@ CarsKmsCtrl.findLast( data => {
   primerEventoDia = data;
   console.log("inner");
   console.log(primerEventoDia);
-  eventos.push(primerEventoDia);
-  console.log(eventos);
+  //eventos.push(primerEventoDia);
+  //console.log(eventos);
 });
 
 
