@@ -84,7 +84,7 @@ Person.
 		limit(1).
 		sort({ fecha: -1 }).
 		exec(function(err, kmsEntry){
-			fun(kmsEntrys);
+			fun(kmsEntry);
 			return kmsEntry;
 		});
 
