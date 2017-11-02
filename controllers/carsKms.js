@@ -38,6 +38,20 @@ exports.test = function(req, res) {
 
 
 //GET - Return a CarsKms with specified ID
+exports.test2 = function(req, res) {
+	
+	CarsKms.
+		find({}).
+		limit(1).
+		sort({ fecha: -1 }).
+		exec(function(err, kmsEntry){
+			res.status(200).jsonp(kmsEntry);
+		});
+
+};
+
+
+//GET - Return a CarsKms with specified ID
 exports.findLast = function(fun) {
 
 	/*
@@ -70,6 +84,7 @@ Person.
 		limit(1).
 		sort({ fecha: -1 }).
 		exec(function(err, kmsEntry){
+			fun(kmsEntrys);
 			return kmsEntry;
 		});
 
