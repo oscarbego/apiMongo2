@@ -65,6 +65,15 @@ Person.
   exec(callback);
   
  */
+ 	CarsKms.
+		find({}).
+		limit(1).
+		sort({ fecha: -1 }).
+		exec(function(err, kmsEntry){
+			return kmsEntry;
+		});
+
+/*
 	CarsKms.
 			find(function(err, kmsEntrys) {
 		if(err) console.log("Error");
@@ -73,6 +82,8 @@ Person.
 		fun(kmsEntrys[0]);
 		return kmsEntrys[0];
 	});
+
+	*/
 };
 
 
