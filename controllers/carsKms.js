@@ -24,6 +24,20 @@ exports.findById = function(req, res) {
 
 
 //GET - Return a CarsKms with specified ID
+exports.test = function(req, res) {
+	
+	CarsKms.
+		find({}).
+		limit(1).
+		sort({ fecha: -1 }).
+		exec(function(err, kmsEntry){
+			res.status(200).jsonp(kmsEntry);
+		});
+
+};
+
+
+//GET - Return a CarsKms with specified ID
 exports.findLast = function(fun) {
 
 	/*
@@ -36,7 +50,23 @@ exports.findLast = function(fun) {
 	});
 	*/
 
-	CarsKms.find(function(err, kmsEntrys) {
+//db.ciudades.find().sort({ciudad:1});
+/*
+Person.
+  find({
+    occupation: /host/,
+    'name.last': 'Ghost',
+    age: { $gt: 17, $lt: 66 },
+    likes: { $in: ['vaporizing', 'talking'] }
+  }).
+  limit(10).
+  sort({ occupation: -1 }).
+  select({ name: 1, occupation: 1 }).
+  exec(callback);
+  
+ */
+	CarsKms.
+			find(function(err, kmsEntrys) {
 		if(err) console.log("Error");
 		console.log("findLast");
 		console.log(kmsEntrys);
