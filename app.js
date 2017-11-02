@@ -71,7 +71,7 @@ var j = schedule.scheduleJob(rule, function () {
   d.setHours(d.getHours() + 2);
   
   
-  var iniKms = primerEventoDia.finKms;
+  var iniKms = primerEventoDia[0].finKms;
 
 
   var finKms = eventos[eventos.length - 1] != undefined ? 
