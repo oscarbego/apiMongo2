@@ -217,8 +217,11 @@ var kms = express.Router();
 
 kms.route('/kms')
   .get(CarsKmsCtrl.getAllKmsEntrys)
-  .get(CarsKmsCtrl.test)
+  
   .post(CarsKmsCtrl.addKmsEntry);
+
+kms.route('/kms/test')
+  .get(CarsKmsCtrl.test)
 
 kms.route('/kms/:id')
   .get(CarsKmsCtrl.findById)
