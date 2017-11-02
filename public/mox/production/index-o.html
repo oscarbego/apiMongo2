@@ -788,35 +788,34 @@
 
   		socket.on('msgs', function (data) {
 
-			console.log("msgs");
+			    console.log("msgs");
           console.log(data);
           console.log("numero de eventos: " + data.length);
           //eventos = data;
 
           if(data.length > 0) {
 
-            ruta_P= addRoutesMox(data);
+            ruta_P = addRoutesMox(data);
             var ev = getMyEventGPS(data[0]);
-	    var ev2 = getMyEventGPS(data[data.length-1]);
+	          var ev2 = getMyEventGPS(data[data.length-1]);
 
-		console.log(ev);
-		console.log(ev2);
+            console.log(ev);
+            console.log(ev2);
 
-		if(ev2.odometer != undefined){
-		actualKm.text( parseInt ((ev2.odometer / 1000) + 142068));
+            if(ev2.odometer != undefined){
+            actualKm.text( parseInt ((ev2.odometer / 1000) + 142068));
 
-          //http://vps147303.vps.ovh.ca/ws/address.php?la=28.60885&lo=-106.0341316
-		/*
-    $.get( "http://vps147303.vps.ovh.ca/ws/address.php?la=" + 
-			ev2.la + "&lo=" + ev2.lo, function( data ) {
-  			console.log(data);
-			$("#dirAc").html(data);
-			
-		});
-    */
+            //http://vps147303.vps.ovh.ca/ws/address.php?la=28.60885&lo=-106.0341316
+            /*
+            $.get( "http://vps147303.vps.ovh.ca/ws/address.php?la=" + 
+              ev2.la + "&lo=" + ev2.lo, function( data ) {
+                console.log(data);
+              $("#dirAc").html(data);
+              
+            });
+            */
 
-
-		}
+		      }
 
 		if(ev.odometer != undefined)
                 iniKm.text( parseInt ((ev.odometer / 1000) + 142068));
