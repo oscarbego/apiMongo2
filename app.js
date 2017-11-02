@@ -43,8 +43,8 @@ var primerEventoDia = undefined;
 
 var rule = new schedule.RecurrenceRule();
   rule.dayOfWeek = [0, new schedule.Range(0, 6)];
-  rule.hour = 9; //rule.hour = 9;
-  rule.minute = 40;
+  rule.hour = 10; //rule.hour = 9;
+  rule.minute = 0;
 
 var j = schedule.scheduleJob(rule, function () {
   console.log('Alarma ');
