@@ -7,6 +7,21 @@ var fs = require('fs');
 var writable = fs.createWriteStream('file-buff.json');
 var mongo = require('mongodb');
 
+
+let net = require('net');
+
+net.createServer(function(s){
+  s.on('data', function(data){
+	console.log("> " + data);  
+    broadcast("> " + data);
+  })
+  function broadcast(message){
+    process.stdout.write(message);
+  }
+}).listen(1338);
+
+
+
 app.use(express.static('public'));
 
 function sumarDias(fecha, dias){
@@ -14,6 +29,8 @@ function sumarDias(fecha, dias){
   return fecha;
 }
 
+
+/*
 
 //------------ Mongo -------------
 // -- https://www.w3schools.com/nodejs/nodejs_mongodb_query.asp
@@ -23,14 +40,14 @@ var url = "mongodb://localhost:27017/mydb";
 
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
-  	/*
+  	/ *
 	db.createCollection("eventosGps", function(err, res) {
     		if (err) throw err;
 
   		console.log("Collection created!");
   		db.close();
 	});
-	*/
+	* /
 
 		
 	var myobj = { name: "Company Inc", address: "Highway 37", "fecha": new Date() };
@@ -40,25 +57,25 @@ MongoClient.connect(url, function(err, db) {
 	console.log("-------- Resta -----");
 	console.log(sumarDias(d, -1));
 
-	/*
+	/ *
 	db.collection("eventosGps").insertOne(myobj, function(err, res) {
     		if (err) throw err;
     
 		console.log("1 document inserted");
     		db.close();
   	});
-	*/	
+	* /	
 
-	/*
+	/ *
 	db.collection("eventosGps").findOne({}, function(err, result) {
     		if (err) throw err;
     		console.log(result.name);
     		db.close();
   	});
-	*/
+	* /
 
 
-	/*	
+	/ *	
 	var query = { address: "Highway 37" }; // var query = { address: /^S/ }; los q inician con "s"
   	db.collection("eventosGps").find(query).toArray(function(err, result) {
     		if (err) throw err;
@@ -66,7 +83,7 @@ MongoClient.connect(url, function(err, db) {
     		console.log(result);
     		db.close();
   	});
-	*/
+	* /
 
 
 	var queryF = { fecha : {$gt : new Date("2017-10-14")} }; // var query = { address: /^S/ }; los q inician con "s"
@@ -83,20 +100,20 @@ MongoClient.connect(url, function(err, db) {
         });
 
 	
-	/*
+	/ *
 	var myquery = { address: 'Highway 37' };
   	db.collection("eventosGps").deleteOne(myquery, function(err, obj) {
     		if (err) throw err;
     			console.log("1 document deleted");
     		db.close();
   	});
-	*/
+	* /
 
 });
 
 //--------------------------------
 
-
+*/
 
 app.get('/json', function (req, res) {
 
@@ -197,10 +214,11 @@ io.on('connection', function(socket) {
 
   socket.emit('msgs', eventos);
   
+
   socket.on('new-msg', function(data) {
     
     eventos.push(data);
-    //console.log(data);
+    console.log(data);
     io.sockets.emit('msg', data);
   });
 
