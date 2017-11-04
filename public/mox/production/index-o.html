@@ -748,10 +748,20 @@
  d.setDate(d.getDate()-5);
             */
 
+
+            var date = new Date(data[index].fecha);
+
+              console.log('the original date is '+date);
+              var newdate = new Date(date);
+              newdate.setDate(newdate.getDate() - 1);
+              var nd = new Date(newdate);
+              console.log('the new date is ' + nd);
+
+
             tableKms.append(
               `     <div class="row"> 
                                 <div class="col-lg-3">
-                                        <h4>Fecha: ${data[index].fecha} ${moment(data[index].fecha).subtract(1, "days").format("DD/MM/YYYY")} </h4>
+                                        <h4>Fecha: ${data[index].fecha} ${nd}  ${moment(data[index].fecha).subtract(1, "days").format("DD/MM/YYYY")} </h4>
                                 </div>
                                 <div class="col-lg-3">
                                         <h4>Km Inicial: ${data[index].iniKms}</h4>
