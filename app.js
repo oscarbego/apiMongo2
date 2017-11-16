@@ -182,9 +182,6 @@ io.on('connection', function(socket) {
 
 // ----------------------------------------
 
-
-
-
 // Connection to DB
 mongoose.connect('mongodb://localhost/tvshows', function(err, res) {
   if(err) throw err;
@@ -217,11 +214,14 @@ var kms = express.Router();
 
 kms.route('/kms')
   .get(CarsKmsCtrl.getAllKmsEntrys)
-  
   .post(CarsKmsCtrl.addKmsEntry);
 
 kms.route('/kms/test')
-  .get(CarsKmsCtrl.test)
+  .get(CarsKmsCtrl.test);
+
+kms.route('/kms/:ids/porFecha')
+  get(CarsKmsCtrl.testFechas);  
+
 
 kms.route('/kms/:id')
   .get(CarsKmsCtrl.findById)

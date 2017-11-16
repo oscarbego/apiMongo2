@@ -23,6 +23,44 @@ exports.findById = function(req, res) {
 };
 
 
+
+
+//GET - Return a CarsKms with specified ID
+exports.testFechas = function(req, res) {
+	
+	//$gte (“greater than equals” en inglés)
+	//$lte (“lower than equals”).
+	/*
+	var kmsEntry = new CarsKms({
+		imei:    req.body.imei,
+		iniKms:  req.body.iniKms,
+		finKms:  req.body.finKms,
+		fecha:   req.body.fecha, //new Date(),
+		kmsRecorridos:  req.body.kmsRecorridos
+	});
+	*/ 
+	var f1 = req.body.f1;
+	var f2 = req.body.f2;
+	
+
+	CarsKms.
+		find({
+			_id: req.params._id,
+    fecha: {
+        $gte:  f1,
+        $lte:  f2
+    }
+		}).
+		exec(function(err, kmsEntry){
+			res.status(200).jsonp(kmsEntry);
+		});
+
+};
+
+
+
+
+
 //GET - Return a CarsKms with specified ID
 exports.test = function(req, res) {
 	
