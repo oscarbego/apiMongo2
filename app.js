@@ -14,7 +14,7 @@ var fs = require('fs');
 var writable = fs.createWriteStream('file-buff.json');
 
 
-var fechaSO = shell.exec('date ', {silent:true}).stdout;
+var fechaSO = shell.exec("date +'%Y-%m-%dT%H:%m:%S.000Z'", {silent:true}).stdout;
 console.log("fechaSO");
 console.log(fechaSO);
 
