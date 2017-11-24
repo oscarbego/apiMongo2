@@ -17,6 +17,7 @@ var writable = fs.createWriteStream('file-buff.json');
 var fechaSO = shell.exec('date ', {silent:true}).stdout;
 console.log("fechaSO");
 console.log(fechaSO);
+
 //moment().tz("America/Chihuahua").format();
 
 
