@@ -19,6 +19,7 @@ var fechaSO = shell.exec("date +'%Y-%m-%dT00:00:00.000Z'", {silent:true}).stdout
 var fechaSO2 = shell.exec("date +'%Y-%m-%d'", {silent:true}).stdout; 
 console.log("fechaSO");
 console.log(fechaSO);
+//console.log(new Date(fechaSO));
 console.log(new Date(fechaSO2));
 
 //moment().tz("America/Chihuahua").format();
@@ -51,8 +52,8 @@ var primerEventoDia = undefined;
 
 var rule = new schedule.RecurrenceRule();
   rule.dayOfWeek = [0, new schedule.Range(0, 6)];
-  rule.hour = 4; //rule.hour = 9; 1
-  rule.minute = 55; // 30
+  rule.hour = 5; //rule.hour = 9; 1
+  rule.minute = 07; // 30
 
 var j = schedule.scheduleJob(rule, function () {
   console.log('Alarma ');
@@ -98,7 +99,7 @@ var j = schedule.scheduleJob(rule, function () {
 		imei:    862462035861144,
 		iniKms:  iniKms, //primerEventoDia.data[11].value,
 		finKms:  finKms,
-		fecha:   new Date(dateShell),
+		fecha:   shell.exec("date +'%Y-%m-%dT%H:%m:%S.000Z'", {silent:true}).stdout,
 		kmsRecorridos: finKms - iniKms
 	};
 
