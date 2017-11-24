@@ -89,7 +89,8 @@ var j = schedule.scheduleJob(rule, function () {
   
 
   var dateShell =  shell.exec("date +'%Y-%m-%dT00:00:00.000Z'", {silent:true}).stdout; 
-  
+  console.log("dateShell");
+  console.log(dateShell);
   //iniKms = parseInt ((iniKms / 1000) + 142068);
 
   finKms = parseInt ((finKms / 1000) + 142068);
@@ -99,7 +100,7 @@ var j = schedule.scheduleJob(rule, function () {
 		imei:    862462035861144,
 		iniKms:  iniKms, //primerEventoDia.data[11].value,
 		finKms:  finKms,
-		fecha:   shell.exec("date +'%Y-%m-%dT%H:%m:%S.000Z'", {silent:true}).stdout,
+		fecha:   new Date(dateShell),
 		kmsRecorridos: finKms - iniKms
 	};
 
