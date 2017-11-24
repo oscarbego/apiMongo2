@@ -14,9 +14,11 @@ var fs = require('fs');
 var writable = fs.createWriteStream('file-buff.json');
 
 
-var fechaSO = shell.exec("date +'%Y-%m-%dT%H:%m:%S.000Z'", {silent:true}).stdout;
+//var fechaSO = shell.exec("date +'%Y-%m-%dT%H:%m:%S.000Z'", {silent:true}).stdout;
+var fechaSO = shell.exec("date +'%Y-%m-%dT00:00:00.000Z'", {silent:true}).stdout; 
 console.log("fechaSO");
 console.log(fechaSO);
+console.log(new Date(fechaSO));
 
 //moment().tz("America/Chihuahua").format();
 
@@ -85,7 +87,7 @@ var j = schedule.scheduleJob(rule, function () {
   
 
   var dateShell =  shell.exec("date +'%Y-%m-%dT00:00:00.000Z'", {silent:true}).stdout; 
-
+  
   //iniKms = parseInt ((iniKms / 1000) + 142068);
 
   finKms = parseInt ((finKms / 1000) + 142068);
