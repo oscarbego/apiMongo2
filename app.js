@@ -49,7 +49,7 @@ var primerEventoDia = undefined;
 var rule = new schedule.RecurrenceRule();
   rule.dayOfWeek = [0, new schedule.Range(0, 6)];
   rule.hour = 4; //rule.hour = 9; 1
-  rule.minute = 45; // 30
+  rule.minute = 55; // 30
 
 var j = schedule.scheduleJob(rule, function () {
   console.log('Alarma ');
@@ -84,7 +84,7 @@ var j = schedule.scheduleJob(rule, function () {
     : primerEventoDia.finKms;
   
 
-  var dateShell =  shell.exec("date +'%Y-%m-%dT%H:%m:%S.000Z'", {silent:true}).stdout; 
+  var dateShell =  shell.exec("date +'%Y-%m-%dT00:00:00.000Z'", {silent:true}).stdout; 
 
   //iniKms = parseInt ((iniKms / 1000) + 142068);
 
