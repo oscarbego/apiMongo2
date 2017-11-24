@@ -14,7 +14,8 @@
     "body-parser": "^1.5.1",
     "moment-timezone": "*",
     "mysql": "*",
-    "child_process": "*"
+    "child_process": "*",
+    "shelljs": "*"
   },
   "devDependencies": {
     "babel": "~5.8.38",

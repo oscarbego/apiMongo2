@@ -5,7 +5,8 @@ var express         = require("express"),
     mongoose        = require('mongoose');
 
 //var moment = require('moment-timezone');
-    
+var shell = require('shelljs');
+
 var server = require('http').Server(app);
 var io   = require('socket.io')(server);
 var schedule = require('node-schedule');
@@ -13,6 +14,9 @@ var fs = require('fs');
 var writable = fs.createWriteStream('file-buff.json');
 
 
+var fechaSO = shell.exec('date ', {silent:true}).stdout;
+console.log("fechaSO");
+console.log(fechaSO);
 //moment().tz("America/Chihuahua").format();
 
 
@@ -218,6 +222,9 @@ kms.route('/kms')
 
 kms.route('/kms/test')
   .get(CarsKmsCtrl.test);
+
+kms.route('/kms/test2')
+  .get(CarsKmsCtrl.test2);  
 
 kms.route('/kms/:ids/porFecha')
   get(CarsKmsCtrl.testFechas);  

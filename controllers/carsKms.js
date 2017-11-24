@@ -80,7 +80,7 @@ exports.test2 = function(req, res) {
 	
 	CarsKms.
 		find({}).
-		limit(1).
+		limit(10).
 		sort({ fecha: -1 }).
 		exec(function(err, kmsEntry){
 			res.status(200).jsonp(kmsEntry);
