@@ -42,6 +42,8 @@ exports.testFechas = function(req, res) {
 	var f1 = req.body.f1;
 	var f2 = req.body.f2;
 	
+	console.log(f1);
+	console.log(f2);
 
 	CarsKms.
 		find({
