@@ -146,7 +146,7 @@ var j = schedule.scheduleJob(rule, function () {
 
 
 
-
+/*
 var Retranslator = require('./wialon-re');
 var retranslator = new Retranslator({ port: 20163 });
 
@@ -177,7 +177,7 @@ retranslator.emitter.on('message', (msg) =>
 
 retranslator.start();
 
-
+*/
 
 io.on('connection', function(socket) {
 
@@ -250,8 +250,8 @@ app.use('/api', kms);
 // Start server
 
 
-server.listen(3000, function() {
-  console.log("Servidor corriendo en puerto 3000");
+server.listen(3001, function() {
+  console.log("Servidor corriendo en puerto 3001");
 });
 
 
