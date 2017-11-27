@@ -766,8 +766,10 @@
 						startDate = new Date(ev.date);
 						$('#startDate').text($('#dp4').data('date'));
 					}
-                    console.log(new Date(ev.date));
-					          $('#dp4').datepicker('hide');
+                        console.log(new Date(ev.date));
+					    $('#dp4').datepicker('hide');
+
+                        console.log($('#endDate').text($('#dp4').data('date')));
 
 				});
 
@@ -780,12 +782,11 @@
 						endDate = new Date(ev.date);
 						$('#endDate').text($('#dp5').data('date'));
 					}
-                    console.log(new Date(ev.date));
-					          $('#dp5').datepicker('hide');
+                        console.log(new Date(ev.date));
+                        console.log($('#endDate').text($('#dp5').data('date')));
+					    $('#dp5').datepicker('hide');
 
-                    getDiasXFecha($('#startDate').text($('#dp4').data('date')), 
-                                  $('#endDate').text($('#dp5').data('date'))
-                                  );          
+                    
 				});
 
 
