@@ -705,8 +705,10 @@
                         console.log(".-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.");
                         console.log(data);
 
+
                         var tableKms = $("#tableKms");
 
+                        tableKms.html("");
                         //var name = "Brendan";
                         //console.log(`Yo, ${name}!`);
 
@@ -728,7 +730,7 @@
                             var nd = new Date(newdate);
                             console.log('the new date is ' + nd);
 
-                            tableKms.html("");
+                            
 
                             tableKms.append(
                             `     <div class="row"> 
