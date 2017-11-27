@@ -711,7 +711,7 @@
                         //console.log(`Yo, ${name}!`);
 
 
-                        for (var index = 0; index < 10; index++) {
+                        for (var index = 0; index < data.length; index++) {
 
                             //console.log(moment(data[index].fecha).format("DD/MM/YYYY HH:mm:ss"));
                             /*
@@ -722,7 +722,7 @@
 
                             var date = new Date(data[index].fecha);
 
-                            console.log('the original date is '+date);
+                            console.log('the original date is ' + date);
                             var newdate = new Date(date);
                             newdate.setDate(newdate.getDate() - 1);
                             var nd = new Date(newdate);
