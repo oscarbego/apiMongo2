@@ -695,8 +695,8 @@
                 $.post( "http://vps147303.vps.ovh.ca:3001/api/kms/porFecha", 
                     {
                         
-                        "f1": "2016-11-1",
-                        "f2": "2018-11-1"
+                        "f1": f1,
+                        "f2": f2
                         
                     }
                     ,
@@ -783,7 +783,9 @@
                     console.log(new Date(ev.date));
 					          $('#dp5').datepicker('hide');
 
-                    getDiasXFecha("", "");          
+                    getDiasXFecha($('#startDate').text($('#dp4').data('date')), 
+                                  $('#endDate').text($('#dp5').data('date'))
+                                  );          
 				});
 
 
