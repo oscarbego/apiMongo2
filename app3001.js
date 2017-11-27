@@ -237,7 +237,7 @@ kms.route('/kms/test2')
   .get(CarsKmsCtrl.test2);  
 
 kms.route('/kms/porFecha')
-  .get(CarsKmsCtrl.testFechas);  
+  .post(CarsKmsCtrl.testFechas);  
 
 
 kms.route('/kms/:id')
