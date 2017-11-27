@@ -45,12 +45,8 @@ exports.testFechas = function(req, res) {
 
 	CarsKms.
 		find({
-			_id: req.params._id,
-    fecha: {
-        $gte:  f1,
-        $lte:  f2
-    }
-		}).
+    			fecha: { $gte:  f1, $lte:  f2 }
+			}).
 		exec(function(err, kmsEntry){
 			res.status(200).jsonp(kmsEntry);
 		});
